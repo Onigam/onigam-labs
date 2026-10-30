@@ -41,6 +41,8 @@ export const fr = {
       buckets: '26 augets',
       diameter: 'Ø 244 mm',
       hub: 'moyeu',
+      generator: 'génératrice',
+      power: 'électricité',
       shaft: 'arbre',
       jet: 'jet',
     },

@@ -4,7 +4,9 @@ The direction in a few lines, so a later change keeps the spirit.
 
 **Idea.** The site is the front door of labs whose signature is the _exploded view_. So the one memorable thing is the hero: a
 Pelton runner drawn as a technical diagram that turns and comes apart as you scroll (step 1 explore, step 2 take apart, step 3
-run it). Everything else is quiet and disciplined: a drafting sheet, hairlines, one accent.
+run it). Depth is drawn properly (the shaft passes through the wheel and comes out of the hub: the part under the wheel's plane is
+drawn behind it, the part above in front), and the shaft carries a generator whose cable lights a lamp at step 3, so the last step
+says what the machine is for. Everything else is quiet and disciplined: a drafting sheet, hairlines, one accent.
 
 **Link with the labs, without copying them.** Same paper grid and same copper accent, same JetBrains Mono for figures. The paper is
 a cooler mineral off-white (`#eef1ec`) instead of the labs' warm cream, ink is a blue-black, and the type is the labs' own pair, Space Grotesk and

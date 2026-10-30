@@ -43,6 +43,8 @@ export const en: Dict = {
       buckets: '26 buckets',
       diameter: 'Ø 244 mm',
       hub: 'hub',
+      generator: 'generator',
+      power: 'electricity',
       shaft: 'shaft',
       jet: 'jet',
     },

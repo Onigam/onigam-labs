@@ -1,3 +1,5 @@
+import { cablePath } from '../render/runner';
+
 // The hero story: scroll progress (0 to 1) drives how far the runner comes apart and how far it has turned.
 //   wide screens  : the hero is pinned for a few screens of scrolling (CSS), progress follows the scroll;
 //   small screens : no pin, progress follows the runner crossing the viewport;
@@ -14,7 +16,8 @@ const STAGES: ReadonlyArray<readonly [number, number]> = [
   [0.34, 0.68],
   [0.68, 1],
 ];
-const explosion = (p: number): number => 0.06 + 0.94 * smooth(0.2, 0.52, p) * (1 - 0.9 * smooth(0.72, 0.94, p));
+// comes apart, then goes back together for the last step (fully assembled at the end, so the lamp can light)
+const explosion = (p: number): number => (0.06 + 0.94 * smooth(0.2, 0.52, p)) * (1 - smooth(0.72, 0.94, p));
 /** The state a step shows when it is picked by hand (reduced motion). */
 const MANUAL = [0.08, 1, 0.1];
 
@@ -28,6 +31,7 @@ export function initStory(hero: HTMLElement): Story | null {
   const pin = hero.querySelector<HTMLElement>('.hero__pin');
   const figure = hero.querySelector<HTMLElement>('.hero__figure');
   const steps = [...hero.querySelectorAll<HTMLElement>('.step')];
+  const wires = [...hero.querySelectorAll<SVGPathElement>('.rn-cable, .rn-sparks')];
   if (!runner || !pin || !figure) return null;
 
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
@@ -44,6 +48,9 @@ export function initStory(hero: HTMLElement): Story | null {
   const paint = (): void => {
     runner.style.setProperty('--e', e.toFixed(4));
     runner.style.setProperty('--p', p.toFixed(4));
+    // the generator rides on the shaft, so the cable to the lamp follows it
+    const wire = cablePath(e);
+    wires.forEach((w) => w.setAttribute('d', wire));
     const stage = STAGES.findIndex(([, b]) => targetP < b);
     const active = stage === -1 ? 2 : stage;
     hero.dataset.stage = String(active + 1);

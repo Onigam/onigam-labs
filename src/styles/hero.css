@@ -62,7 +62,8 @@
   stroke: var(--ink-3) !important;
   stroke-width: 1 !important;
 }
-.rn-edge path {
+.rn .rn-wall {
+  fill: color-mix(in srgb, var(--ink) 11%, var(--bg));
   stroke: var(--ink-3);
   stroke-width: 1.2;
 }
@@ -83,23 +84,110 @@
   transform: rotate(calc(var(--p) * 600deg));
 }
 .rn-hub {
-  transform: translateY(calc(var(--e) * -66px));
+  transform: translateY(calc(var(--e) * -50px));
 }
-.rn-hub-body {
-  fill: var(--bg) !important;
-  stroke: var(--copper) !important;
-  stroke-width: 2 !important;
+.rn .rn-hub-body {
+  fill: var(--bg);
+  stroke: var(--copper);
+  stroke-width: 2;
+}
+.rn .rn-hub-wall {
+  fill: color-mix(in srgb, var(--copper) 16%, var(--bg));
+  stroke: var(--copper);
+  stroke-width: 1.4;
+}
+.rn .rn-bore {
+  fill: color-mix(in srgb, var(--ink) 30%, var(--bg));
+  stroke: var(--ink-3);
+  stroke-width: 1;
 }
 .rn-shaft {
-  transform: translateY(calc(var(--e) * -120px));
+  transform: translateY(calc(var(--e) * -150px));
 }
-.rn-rod {
-  stroke-width: 7 !important;
-  stroke: var(--ink) !important;
+.rn .rn-rod {
+  stroke-width: 7;
+  stroke: var(--ink);
 }
-.rn-cap {
-  fill: var(--bg) !important;
+.rn .rn-cap {
+  fill: var(--bg);
   stroke-width: 1.4;
+}
+/* the generator on the shaft, and the electricity it makes */
+.rn .rn-gen-body {
+  fill: color-mix(in srgb, var(--copper) 18%, var(--bg));
+  stroke: var(--ink);
+  stroke-width: 1.4;
+}
+.rn .rn-gen-top {
+  fill: color-mix(in srgb, var(--copper) 10%, var(--bg));
+  stroke: var(--ink);
+  stroke-width: 1.4;
+}
+.rn .rn-gen-coil {
+  stroke: var(--copper);
+  stroke-width: 2.4;
+}
+.rn .rn-cable {
+  stroke: var(--ink-3);
+  stroke-width: 1.8;
+}
+.rn .rn-sparks {
+  stroke: var(--electricity);
+  stroke-width: 4;
+  stroke-dasharray: 1 13;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.rn .rn-bulb {
+  fill: var(--bg);
+  stroke: var(--ink);
+  stroke-width: 1.6;
+  transition: fill 0.4s;
+}
+.rn .rn-filament {
+  stroke: var(--ink-3);
+  stroke-width: 1.6;
+  transition: stroke 0.4s;
+}
+.rn .rn-socket {
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+.rn .rn-glow {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.rn .rn-glow circle {
+  fill: color-mix(in srgb, var(--electricity) 30%, transparent);
+  stroke: none;
+}
+.rn .rn-glow path {
+  stroke: var(--electricity);
+  stroke-width: 2.4;
+}
+.hero[data-stage='3'] .rn-sparks {
+  opacity: 1;
+  animation: rn-spark 0.8s linear infinite;
+}
+.hero[data-stage='3'] .rn-glow {
+  opacity: 1;
+}
+.hero[data-stage='3'] .rn-bulb {
+  fill: color-mix(in srgb, var(--electricity) 55%, var(--bg));
+}
+.hero[data-stage='3'] .rn-filament {
+  stroke: var(--ink);
+}
+.rn .rn-power-text {
+  fill: var(--ink-2);
+}
+.hero[data-stage='3'] .rn .rn-power-text {
+  fill: var(--ink);
+}
+@keyframes rn-spark {
+  to {
+    stroke-dashoffset: -28;
+  }
 }
 .rn-nozzle {
   fill: color-mix(in srgb, var(--copper) 28%, var(--bg)) !important;
@@ -255,5 +343,13 @@
   .hero__grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
     align-items: center;
+  }
+}
+
+/* on a phone the drawing is about half size: the notes need larger type to stay readable */
+@media (max-width: 639px) {
+  .rn-note-text,
+  .rn-dim-text {
+    font-size: 18px;
   }
 }
