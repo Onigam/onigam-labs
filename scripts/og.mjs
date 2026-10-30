@@ -39,7 +39,8 @@ try {
     ['en', `${base}/en/`],
   ]) {
     const page = await browser.newPage();
-    await page.setViewport({ width: 1200, height: 630, deviceScaleFactor: 1 });
+    // laid out at 1440×756 (the hero's wide layout), rendered at 1200×630
+    await page.setViewport({ width: 1440, height: 756, deviceScaleFactor: 1200 / 1440 });
     await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: 'light' }]);
     await page.goto(url, { waitUntil: 'networkidle0' });
     await new Promise((r) => setTimeout(r, 1800));

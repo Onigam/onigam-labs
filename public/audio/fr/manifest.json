@@ -1,0 +1,280 @@
+{
+  "lang": "fr",
+  "model": "eleven_v4",
+  "generatedAt": "2026-10-30T11:06:45.387Z",
+  "voiceLabel": {
+    "fr": "Voix de synthèse",
+    "en": "Synthetic voice"
+  },
+  "totalSeconds": 109.44,
+  "segments": [
+    {
+      "id": "intro",
+      "scope": "intro",
+      "title": "Visite guidée du site",
+      "file": "intro.mp3",
+      "duration": 109.44,
+      "chars": 1891,
+      "hash": "62596640bad3fff4",
+      "captions": [
+        {
+          "t0": 0,
+          "t1": 1.63,
+          "text": "Bienvenue dans les labs !"
+        },
+        {
+          "t0": 1.63,
+          "t1": 5.4,
+          "text": "Ici, on ne regarde pas les machines de loin : on les démonte."
+        },
+        {
+          "t0": 5.4,
+          "t1": 7.24,
+          "text": "Voici une roue, vue de biais."
+        },
+        {
+          "t0": 7.24,
+          "t1": 9.04,
+          "text": "Elle tourne doucement."
+        },
+        {
+          "t0": 9.04,
+          "t1": 13.24,
+          "text": "Dans un lab, on en fait le tour, on isole une pièce, on l’ouvre en coupe."
+        },
+        {
+          "t0": 13.24,
+          "t1": 14.8,
+          "text": "Puis tout se défait."
+        },
+        {
+          "t0": 14.8,
+          "t1": 20.24,
+          "text": "Les vingt-six petites cuillères s’écartent, le moyeu se soulève, l’arbre sort de son logement…"
+        },
+        {
+          "t0": 20.24,
+          "t1": 25.36,
+          "text": "Chaque pièce a sa fiche : un aperçu, des caractéristiques, de quoi l’entretenir."
+        },
+        {
+          "t0": 25.36,
+          "t1": 27.92,
+          "text": "Et quand tout est remonté, l’eau revient."
+        },
+        {
+          "t0": 27.92,
+          "t1": 33.56,
+          "text": "Une simulation en direct : on change la chute, le débit ou le vent, et on lit ce qui en sort."
+        },
+        {
+          "t0": 33.56,
+          "t1": 34.76,
+          "text": "Voici les labs."
+        },
+        {
+          "t0": 34.76,
+          "t1": 40.12,
+          "text": "Chacun est un site à part : on l’ouvre, on joue, et on revient ici choisir le suivant."
+        },
+        {
+          "t0": 40.12,
+          "t1": 41.87,
+          "text": "Par lequel commencer ?"
+        },
+        {
+          "t0": 41.87,
+          "t1": 46,
+          "text": "Le premier suit un petit ruisseau de montagne, de la prise d’eau jusqu’à la batterie,"
+        },
+        {
+          "t0": 46.08,
+          "t1": 48.12,
+          "text": "en passant par une roue à cuillères."
+        },
+        {
+          "t0": 48.12,
+          "t1": 51.68,
+          "text": "Le deuxième est un bélier hydraulique : une pompe sans moteur,"
+        },
+        {
+          "t0": 51.76,
+          "t1": 56.24,
+          "text": "qui monte l’eau d’une source bien plus haut, avec la seule énergie de l’eau qui descend."
+        },
+        {
+          "t0": 56.24,
+          "t1": 58.24,
+          "text": "Le troisième est une éolienne en bois,"
+        },
+        {
+          "t0": 58.28,
+          "t1": 63.6,
+          "text": "taillée à la main : elle charge une batterie quand le vent se lève, et se met à l’abri quand il forcit."
+        },
+        {
+          "t0": 63.6,
+          "t1": 68.12,
+          "text": "Un quatrième se construit en ce moment : une vis d’Archimède et une roue à aubes."
+        },
+        {
+          "t0": 68.12,
+          "t1": 71.56,
+          "text": "D’autres suivront, du chauffe-eau solaire à la batterie de sable."
+        },
+        {
+          "t0": 71.56,
+          "t1": 74.32,
+          "text": "Sans date : un lab sort quand il est prêt."
+        },
+        {
+          "t0": 74.32,
+          "t1": 78.4,
+          "text": "Dans chaque lab, on retrouve les mêmes repères : des vues en trois dimensions,"
+        },
+        {
+          "t0": 78.48,
+          "t1": 84.11,
+          "text": "une fiche par pièce, un guide de montage, une simulation, des plans, de courtes leçons."
+        },
+        {
+          "t0": 84.11,
+          "t1": 86.48,
+          "text": "Et parfois, une voix comme celle-ci."
+        },
+        {
+          "t0": 86.48,
+          "t1": 89.08,
+          "text": "Un mot d’honnêteté, dit une seule fois."
+        },
+        {
+          "t0": 89.08,
+          "t1": 92.16,
+          "text": "Ces labs sont des reconstitutions pédagogiques indépendantes,"
+        },
+        {
+          "t0": 92.24,
+          "t1": 97,
+          "text": "inspirées de vidéos publiques : ni plans officiels, ni produits de constructeur."
+        },
+        {
+          "t0": 97,
+          "t1": 100.12,
+          "text": "Les sources sont créditées ici, et dans chaque lab."
+        },
+        {
+          "t0": 100.12,
+          "t1": 102.12,
+          "text": "Cette voix est une voix de synthèse."
+        },
+        {
+          "t0": 102.12,
+          "t1": 106.48,
+          "text": "Et pour construire pour de vrai, prenez les précautions d’usage : l’électricité,"
+        },
+        {
+          "t0": 106.52,
+          "t1": 108.6,
+          "text": "l’eau et le feu ont leurs règles."
+        },
+        {
+          "t0": 108.6,
+          "t1": 109.44,
+          "text": "À vous de jouer !"
+        }
+      ],
+      "cues": [
+        {
+          "t": 0,
+          "do": {
+            "lab": "top"
+          }
+        },
+        {
+          "t": 5.4,
+          "do": {
+            "lab": "step",
+            "arg": "1"
+          }
+        },
+        {
+          "t": 13.24,
+          "do": {
+            "lab": "step",
+            "arg": "2"
+          }
+        },
+        {
+          "t": 25.36,
+          "do": {
+            "lab": "step",
+            "arg": "3"
+          }
+        },
+        {
+          "t": 33.56,
+          "do": {
+            "lab": "section",
+            "arg": "labs"
+          }
+        },
+        {
+          "t": 41.87,
+          "do": {
+            "lab": "card",
+            "arg": "pelton-lab"
+          }
+        },
+        {
+          "t": 48.12,
+          "do": {
+            "lab": "card",
+            "arg": "ram-pump-lab"
+          }
+        },
+        {
+          "t": 56.24,
+          "do": {
+            "lab": "card",
+            "arg": "piggott-lab"
+          }
+        },
+        {
+          "t": 63.6,
+          "do": {
+            "lab": "card",
+            "arg": "mill-lab"
+          }
+        },
+        {
+          "t": 68.12,
+          "do": {
+            "lab": "section",
+            "arg": "planned"
+          }
+        },
+        {
+          "t": 74.32,
+          "do": {
+            "lab": "section",
+            "arg": "inside"
+          }
+        },
+        {
+          "t": 86.48,
+          "do": {
+            "lab": "section",
+            "arg": "about"
+          }
+        },
+        {
+          "t": 108.6,
+          "do": {
+            "lab": "section",
+            "arg": "labs"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,275 @@
+{
+  "lang": "en",
+  "model": "eleven_v4",
+  "generatedAt": "2026-10-30T11:07:11.904Z",
+  "voiceLabel": {
+    "fr": "Voix de synthèse",
+    "en": "Synthetic voice"
+  },
+  "totalSeconds": 120,
+  "segments": [
+    {
+      "id": "intro",
+      "scope": "intro",
+      "title": "Guided tour of the site",
+      "file": "intro.mp3",
+      "duration": 120,
+      "chars": 1820,
+      "hash": "d3a240dcc2889b68",
+      "captions": [
+        {
+          "t0": 0,
+          "t1": 1.68,
+          "text": "Welcome to the labs!"
+        },
+        {
+          "t0": 1.68,
+          "t1": 6.56,
+          "text": "Here, we don’t look at machines from far away: we take them apart."
+        },
+        {
+          "t0": 6.56,
+          "t1": 9.04,
+          "text": "This is a wheel, seen at an angle."
+        },
+        {
+          "t0": 9.04,
+          "t1": 10.72,
+          "text": "It turns slowly."
+        },
+        {
+          "t0": 10.72,
+          "t1": 15.08,
+          "text": "In a lab, you can walk around it, isolate a part, cut it open."
+        },
+        {
+          "t0": 15.08,
+          "t1": 17.12,
+          "text": "Then everything comes undone."
+        },
+        {
+          "t0": 17.12,
+          "t1": 23.04,
+          "text": "The twenty-six little cups fan out, the hub lifts off, the shaft slides out of its seat…"
+        },
+        {
+          "t0": 23.04,
+          "t1": 28.48,
+          "text": "Every part has its own sheet: an overview, its specifications, how to look after it."
+        },
+        {
+          "t0": 28.48,
+          "t1": 31.64,
+          "text": "And once it is all back together, the water returns."
+        },
+        {
+          "t0": 31.64,
+          "t1": 37.68,
+          "text": "A live simulation: you change the head, the flow or the wind, and read what comes out."
+        },
+        {
+          "t0": 37.68,
+          "t1": 39.16,
+          "text": "Here are the labs."
+        },
+        {
+          "t0": 39.16,
+          "t1": 44.88,
+          "text": "Each one is a site of its own: you open it, you play, and you come back here to pick the next."
+        },
+        {
+          "t0": 44.88,
+          "t1": 46.24,
+          "text": "Which one first?"
+        },
+        {
+          "t0": 46.24,
+          "t1": 51.04,
+          "text": "The first follows a small mountain stream, from the intake all the way to the battery,"
+        },
+        {
+          "t0": 51.12,
+          "t1": 53.04,
+          "text": "through a wheel of little cups."
+        },
+        {
+          "t0": 53.04,
+          "t1": 59.12,
+          "text": "The second is a hydraulic ram: a pump with no motor, which lifts spring water far higher,"
+        },
+        {
+          "t0": 59.2,
+          "t1": 62.16,
+          "text": "using only the energy of the water that falls."
+        },
+        {
+          "t0": 62.16,
+          "t1": 64.48,
+          "text": "The third is a wooden wind turbine,"
+        },
+        {
+          "t0": 64.56,
+          "t1": 71.12,
+          "text": "carved by hand: it charges a battery when the wind picks up, and steps out of the way when it gets too strong."
+        },
+        {
+          "t0": 71.12,
+          "t1": 75.96,
+          "text": "A fourth is being built right now: an Archimedes screw and a water wheel."
+        },
+        {
+          "t0": 75.96,
+          "t1": 79.68,
+          "text": "More will follow, from the solar water heater to the sand battery."
+        },
+        {
+          "t0": 79.68,
+          "t1": 82.96,
+          "text": "No dates: a lab ships when it is ready."
+        },
+        {
+          "t0": 82.96,
+          "t1": 87.52,
+          "text": "Inside every lab, you find the same bearings: views in three dimensions,"
+        },
+        {
+          "t0": 87.6,
+          "t1": 93.28,
+          "text": "a sheet for every part, an assembly guide, a simulation, drawings, short lessons."
+        },
+        {
+          "t0": 93.28,
+          "t1": 95.88,
+          "text": "And sometimes, a voice like this one."
+        },
+        {
+          "t0": 95.88,
+          "t1": 98.56,
+          "text": "A word of honesty, said just once."
+        },
+        {
+          "t0": 98.56,
+          "t1": 101.84,
+          "text": "These labs are independent educational reconstructions,"
+        },
+        {
+          "t0": 101.96,
+          "t1": 106.88,
+          "text": "inspired by public videos: neither official drawings nor makers’ products."
+        },
+        {
+          "t0": 106.88,
+          "t1": 110.48,
+          "text": "The sources are credited here, and inside every lab."
+        },
+        {
+          "t0": 110.48,
+          "t1": 112.68,
+          "text": "This voice is a synthetic voice."
+        },
+        {
+          "t0": 112.68,
+          "t1": 119.16,
+          "text": "And if you build for real, take the usual precautions: electricity, water and fire have their rules."
+        },
+        {
+          "t0": 119.16,
+          "t1": 120,
+          "text": "Over to you!"
+        }
+      ],
+      "cues": [
+        {
+          "t": 0,
+          "do": {
+            "lab": "top"
+          }
+        },
+        {
+          "t": 6.56,
+          "do": {
+            "lab": "step",
+            "arg": "1"
+          }
+        },
+        {
+          "t": 15.08,
+          "do": {
+            "lab": "step",
+            "arg": "2"
+          }
+        },
+        {
+          "t": 28.48,
+          "do": {
+            "lab": "step",
+            "arg": "3"
+          }
+        },
+        {
+          "t": 37.68,
+          "do": {
+            "lab": "section",
+            "arg": "labs"
+          }
+        },
+        {
+          "t": 46.24,
+          "do": {
+            "lab": "card",
+            "arg": "pelton-lab"
+          }
+        },
+        {
+          "t": 53.04,
+          "do": {
+            "lab": "card",
+            "arg": "ram-pump-lab"
+          }
+        },
+        {
+          "t": 62.16,
+          "do": {
+            "lab": "card",
+            "arg": "piggott-lab"
+          }
+        },
+        {
+          "t": 71.12,
+          "do": {
+            "lab": "card",
+            "arg": "mill-lab"
+          }
+        },
+        {
+          "t": 75.96,
+          "do": {
+            "lab": "section",
+            "arg": "planned"
+          }
+        },
+        {
+          "t": 82.96,
+          "do": {
+            "lab": "section",
+            "arg": "inside"
+          }
+        },
+        {
+          "t": 95.88,
+          "do": {
+            "lab": "section",
+            "arg": "about"
+          }
+        },
+        {
+          "t": 119.16,
+          "do": {
+            "lab": "section",
+            "arg": "labs"
+          }
+        }
+      ]
+    }
+  ]
+}
