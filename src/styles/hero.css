@@ -1,0 +1,259 @@
+/* Hero: the headline on the left, a Pelton runner on the right that comes apart as the page scrolls. */
+.hero__pin {
+  padding-block: clamp(28px, 5vw, 72px) clamp(24px, 4vw, 56px);
+}
+.hero__grid {
+  display: grid;
+  gap: clamp(28px, 5vw, 56px);
+  grid-template-columns: minmax(0, 1fr);
+}
+.hero__copy {
+  display: grid;
+  gap: 26px;
+  align-content: center;
+}
+.hero h1 {
+  font-size: clamp(2.35rem, 1.1rem + 4.3vw, 4.4rem);
+  max-width: 15ch;
+}
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.hero__figure {
+  min-width: 0;
+}
+.runner {
+  --e: 0.55;
+  --p: 0.4;
+  width: 100%;
+  max-width: 680px;
+  margin-inline: auto;
+}
+.rn {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  color: var(--ink);
+}
+.rn path,
+.rn circle,
+.rn ellipse {
+  vector-effect: non-scaling-stroke;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.rn-web {
+  fill: color-mix(in srgb, var(--ink) 5%, var(--bg)) !important;
+  stroke-width: 1.8 !important;
+}
+.rn-line {
+  stroke: var(--ink-3) !important;
+  stroke-width: 1 !important;
+}
+.rn-holes circle {
+  fill: var(--bg) !important;
+  stroke: var(--ink-3) !important;
+  stroke-width: 1 !important;
+}
+.rn-edge path {
+  stroke: var(--ink-3);
+  stroke-width: 1.2;
+}
+.rn-petal-body {
+  fill: color-mix(in srgb, var(--copper) 26%, var(--bg)) !important;
+}
+.rn-petal-split {
+  stroke: var(--copper) !important;
+  stroke-width: 1.2 !important;
+}
+.rn-bucket {
+  transform: rotate(var(--a)) translateY(calc(var(--e) * -46px));
+}
+.rn-idle {
+  animation: rn-spin 140s linear infinite;
+}
+.rn-turn {
+  transform: rotate(calc(var(--p) * 600deg));
+}
+.rn-hub {
+  transform: translateY(calc(var(--e) * -66px));
+}
+.rn-hub-body {
+  fill: var(--bg) !important;
+  stroke: var(--copper) !important;
+  stroke-width: 2 !important;
+}
+.rn-shaft {
+  transform: translateY(calc(var(--e) * -120px));
+}
+.rn-rod {
+  stroke-width: 7 !important;
+  stroke: var(--ink) !important;
+}
+.rn-cap {
+  fill: var(--bg) !important;
+  stroke-width: 1.4;
+}
+.rn-nozzle {
+  fill: color-mix(in srgb, var(--copper) 28%, var(--bg)) !important;
+  stroke-width: 1.6;
+}
+.rn-stream {
+  stroke: var(--water) !important;
+  stroke-width: 3.2 !important;
+  stroke-dasharray: 11 9;
+  animation: rn-flow 0.7s linear infinite;
+  opacity: 0.55;
+  transition: opacity 0.4s;
+}
+.hero[data-stage='3'] .rn-stream {
+  opacity: 1;
+}
+.rn-leader {
+  stroke: var(--copper) !important;
+  stroke-width: 1 !important;
+}
+.rn-note,
+.rn-note--buckets {
+  opacity: clamp(0, calc((var(--e) - 0.3) * 4), 1);
+}
+.rn-dim {
+  opacity: clamp(0, calc(1 - var(--e) * 3.2), 1);
+}
+.rn-dim-line {
+  stroke: var(--ink-2) !important;
+  stroke-width: 1 !important;
+  color: var(--ink-2);
+}
+.rn-note-text,
+.rn-dim-text {
+  font: 500 14px var(--mono);
+  fill: var(--ink-2);
+}
+.rn-note-text--end {
+  text-anchor: end;
+}
+.rn-dim-text {
+  fill: var(--ink);
+  font-weight: 600;
+}
+@keyframes rn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rn-flow {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+@keyframes rn-develop {
+  from {
+    clip-path: circle(0% at 50% 52%);
+  }
+  to {
+    clip-path: circle(80% at 50% 52%);
+  }
+}
+@keyframes rn-pop {
+  from {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .rn {
+    animation: rn-develop 1.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .rn-bucket use {
+    animation: rn-pop 0.5s calc(0.35s + var(--i) * 32ms) both;
+  }
+}
+
+.steps {
+  display: grid;
+  gap: 18px 22px;
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: clamp(18px, 3vw, 30px);
+}
+.step {
+  --fill: 1;
+  color: var(--ink-2);
+  transition: color 0.3s;
+}
+.step[data-active] {
+  color: var(--ink);
+}
+.step p {
+  margin-top: 4px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+.step__tab {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+.step__bar {
+  display: block;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--line-2);
+  overflow: hidden;
+}
+.step__bar i {
+  display: block;
+  height: 100%;
+  width: calc(var(--fill) * 100%);
+  background: var(--accent);
+}
+.step__name {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+@media (min-width: 640px) {
+  .steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Wide screens with JavaScript and motion: the hero is pinned while the runner comes apart. */
+@media (min-width: 960px) and (min-height: 620px) and (prefers-reduced-motion: no-preference) {
+  .js .hero {
+    height: 330svh;
+  }
+  .js .hero__pin {
+    position: sticky;
+    top: var(--header-h);
+    height: calc(100svh - var(--header-h));
+    display: grid;
+    align-items: center;
+    padding-block: 0;
+  }
+  .hero__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    align-items: center;
+  }
+  .runner {
+    max-width: min(680px, 62svh * 1.62);
+  }
+}
+@media (min-width: 960px) {
+  .hero__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    align-items: center;
+  }
+}

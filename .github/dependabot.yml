@@ -1,0 +1,14 @@
+version: 2
+updates:
+  # build tooling and fonts
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      tooling:
+        patterns: ['typescript', 'vite', 'vitest', 'prettier', '@types/*', '@fontsource-variable/*', 'puppeteer-core']
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

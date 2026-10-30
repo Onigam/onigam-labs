@@ -1,0 +1,18 @@
+{
+  "slug": "mill-lab",
+  "order": 1,
+  "status": "building",
+  "title": { "fr": "Mill Lab", "en": "Mill Lab" },
+  "tagline": {
+    "fr": "Vis d’Archimède et roue à aubes : de la chute d’eau à l’électricité",
+    "en": "Archimedes screw and water wheel: from falling water to electricity"
+  },
+  "domains": ["water", "electricity"],
+  "tags": ["hydro", "off-grid"],
+  "difficulty": 2,
+  "minutes": 25,
+  "languages": ["fr", "en"],
+  "spokenGuide": [],
+  "repoUrl": "https://github.com/Onigam/mill-lab",
+  "sources": []
+}

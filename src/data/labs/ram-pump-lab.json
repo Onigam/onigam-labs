@@ -1,0 +1,47 @@
+{
+  "slug": "ram-pump-lab",
+  "order": 2,
+  "status": "live",
+  "title": {
+    "fr": "Labo du bélier hydraulique",
+    "en": "Hydraulic Ram Lab"
+  },
+  "tagline": {
+    "fr": "Pomper l’eau sans électricité ni carburant",
+    "en": "Pumping water with no electricity or fuel"
+  },
+  "domains": ["water"],
+  "tags": ["hydraulics", "off-grid"],
+  "difficulty": 2,
+  "minutes": 20,
+  "languages": ["fr", "en"],
+  "spokenGuide": ["fr", "en"],
+  "liveUrl": "https://ram-pump-lab.vercel.app",
+  "thumbnail": "ram-pump-lab",
+  "repoUrl": "https://github.com/Onigam/ram-pump-lab",
+  "capture": {
+    "scene": "ram",
+    "explode": 0.6,
+    "zoom": 1.35,
+    "focus": [0.5, 0.53]
+  },
+  "sources": [
+    {
+      "title": "Création clapet de choc pour que notre bélier hydraulique ne s’arrête plus",
+      "author": "L’énergie partout",
+      "url": "https://www.youtube.com/watch?v=mc0gq5rObcM",
+      "year": 2024
+    },
+    {
+      "title": "Un bélier hydraulique pour arroser le potager",
+      "author": "Bernard Le Poder",
+      "url": "https://www.youtube.com/watch?v=_6331LAYAA0",
+      "year": 2021
+    },
+    {
+      "title": "Hydraulic Ram Pumps",
+      "author": "NC State Extension",
+      "url": "https://content.ces.ncsu.edu/hydraulic-ram-pumps"
+    }
+  ]
+}

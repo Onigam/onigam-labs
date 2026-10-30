@@ -1,0 +1,15 @@
+{
+  "slug": "bioclimatic-house-lab",
+  "order": 3,
+  "status": "planned",
+  "title": { "fr": "Maison bioclimatique", "en": "Bioclimatic house" },
+  "tagline": {
+    "fr": "Mur Trombe, puits canadien, séchoir et cuiseur solaires dans une maison en coupe",
+    "en": "Trombe wall, earth tube, solar dryer and cooker in a house cutaway"
+  },
+  "domains": ["heat"],
+  "tags": ["solar", "passive"],
+  "languages": ["fr", "en"],
+  "spokenGuide": [],
+  "sources": []
+}

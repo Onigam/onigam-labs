@@ -1,0 +1,15 @@
+{
+  "slug": "gasifier-lab",
+  "order": 7,
+  "status": "planned",
+  "title": { "fr": "Gazogène", "en": "Wood gasifier" },
+  "tagline": {
+    "fr": "Le voyage d’un morceau de bois, de la bûche au gaz",
+    "en": "A piece of wood’s journey, from log to gas"
+  },
+  "domains": ["heat", "electricity"],
+  "tags": ["wood", "off-grid"],
+  "languages": ["fr", "en"],
+  "spokenGuide": [],
+  "sources": []
+}

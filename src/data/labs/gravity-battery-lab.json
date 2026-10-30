@@ -1,0 +1,12 @@
+{
+  "slug": "gravity-battery-lab",
+  "order": 4,
+  "status": "planned",
+  "title": { "fr": "Batterie à gravité", "en": "Gravity battery" },
+  "tagline": { "fr": "Stocker l’énergie en soulevant un poids", "en": "Storing energy by lifting a weight" },
+  "domains": ["storage", "electricity"],
+  "tags": ["off-grid"],
+  "languages": ["fr", "en"],
+  "spokenGuide": [],
+  "sources": []
+}

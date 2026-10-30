@@ -1,0 +1,12 @@
+{
+  "slug": "sand-battery-lab",
+  "order": 5,
+  "status": "planned",
+  "title": { "fr": "Batterie de sable", "en": "Sand battery" },
+  "tagline": { "fr": "Stocker la chaleur dans du sable", "en": "Storing heat in sand" },
+  "domains": ["storage", "heat"],
+  "tags": ["off-grid"],
+  "languages": ["fr", "en"],
+  "spokenGuide": [],
+  "sources": []
+}

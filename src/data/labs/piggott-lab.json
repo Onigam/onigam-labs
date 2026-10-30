@@ -1,0 +1,46 @@
+{
+  "slug": "piggott-lab",
+  "order": 3,
+  "status": "live",
+  "title": {
+    "fr": "Piggott Lab",
+    "en": "Piggott Lab"
+  },
+  "tagline": {
+    "fr": "Une éolienne en bois qui charge une batterie",
+    "en": "A wooden wind turbine that charges a battery"
+  },
+  "domains": ["electricity"],
+  "tags": ["wind", "off-grid"],
+  "difficulty": 3,
+  "minutes": 25,
+  "languages": ["fr", "en"],
+  "spokenGuide": ["fr", "en"],
+  "liveUrl": "https://piggott-lab.vercel.app",
+  "thumbnail": "piggott-lab",
+  "repoUrl": "https://github.com/Onigam/piggott-lab",
+  "capture": {
+    "scene": "turbine",
+    "explode": 0.5,
+    "zoom": 1.7,
+    "focus": [0.49, 0.54]
+  },
+  "sources": [
+    {
+      "title": "How to build homemade Piggott wind turbine",
+      "author": "Low-tech Lab",
+      "url": "https://www.youtube.com/watch?v=e_sZ3tH_15E"
+    },
+    {
+      "title": "Lozère : apprenez à construire votre éolienne Piggott vous-même à Florac",
+      "author": "France 3 Occitanie",
+      "url": "https://www.youtube.com/watch?v=6DMyj2sBf_Q"
+    },
+    {
+      "title": "Axial-flow PMG wind turbine plans",
+      "author": "Hugh Piggott",
+      "url": "https://www.scoraigwind.com/pirate%20oldies/Hugh%20Piggott%20Axial-flow%20PMG%20wind%20turbine%20May%202003.pdf",
+      "year": 2003
+    }
+  ]
+}

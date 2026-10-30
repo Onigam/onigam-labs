@@ -1,0 +1,12 @@
+{
+  "slug": "biodigester-lab",
+  "order": 6,
+  "status": "planned",
+  "title": { "fr": "Biodigesteur", "en": "Biodigester" },
+  "tagline": { "fr": "Du gaz de cuisson à partir de déchets organiques", "en": "Cooking gas from organic waste" },
+  "domains": ["heat"],
+  "tags": ["biogas", "off-grid"],
+  "languages": ["fr", "en"],
+  "spokenGuide": [],
+  "sources": []
+}

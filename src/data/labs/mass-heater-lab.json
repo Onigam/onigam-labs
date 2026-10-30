@@ -1,0 +1,15 @@
+{
+  "slug": "mass-heater-lab",
+  "order": 2,
+  "status": "planned",
+  "title": { "fr": "Poêle de masse", "en": "Rocket mass heater" },
+  "tagline": {
+    "fr": "Brûler peu, chauffer longtemps : la chaleur gardée dans la masse",
+    "en": "Burn little, heat for hours: warmth kept in the mass"
+  },
+  "domains": ["heat", "storage"],
+  "tags": ["wood", "off-grid"],
+  "languages": ["fr", "en"],
+  "spokenGuide": [],
+  "sources": []
+}

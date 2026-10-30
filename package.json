@@ -1,0 +1,33 @@
+{
+  "name": "onigam-labs",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Showcase of the Onigam educational 3D energy labs",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && node scripts/check-labs.mjs && vite build && vite build --ssr src/entry-server.ts --outDir .ssr && node scripts/prerender.mjs",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check-labs": "node scripts/check-labs.mjs",
+    "add-lab": "node scripts/add-lab.mjs",
+    "og": "node scripts/og.mjs",
+    "format": "prettier --write \"src/**/*.{ts,css,json}\" \"*.md\" \"docs/*.md\" \"scripts/*.mjs\"",
+    "format:check": "prettier --check \"src/**/*.{ts,css,json}\" \"*.md\" \"docs/*.md\" \"scripts/*.mjs\""
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@fontsource-variable/space-grotesk": "^5.3.0",
+    "@types/node": "^24.19.2",
+    "prettier": "^3.9.10",
+    "puppeteer-core": "^25.16.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^4.1.12"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

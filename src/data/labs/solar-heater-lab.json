@@ -1,0 +1,15 @@
+{
+  "slug": "solar-heater-lab",
+  "order": 1,
+  "status": "planned",
+  "title": { "fr": "Chauffe-eau solaire", "en": "Solar water heater" },
+  "tagline": {
+    "fr": "Un capteur, un ballon et l’eau chaude qui monte toute seule",
+    "en": "A collector, a tank and hot water that rises on its own"
+  },
+  "domains": ["heat", "water"],
+  "tags": ["solar", "off-grid"],
+  "languages": ["fr", "en"],
+  "spokenGuide": [],
+  "sources": []
+}
