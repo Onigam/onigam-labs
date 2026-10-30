@@ -104,6 +104,25 @@ An entry looks like this (`src/data/schema.ts` is the reference, and the build c
 electricity…); the other tags stay as free tags, translated by `src/i18n` when it knows them. A lab whose `lab.json` is still the
 template's cannot be added as `live`.
 
+## Spoken guided tour
+
+A voice walks the visitor through the site: the hero, each lab, "Inside every lab", About. It is the **same synthetic voice as the
+labs** (ElevenLabs, always labelled _synthetic voice_). The page follows the voice (it scrolls, a ring marks the lab being
+described, the hero runner comes apart on cue), with subtitles, a seek bar, a speed switch and a **Guidance** switch that lets go as
+soon as the visitor scrolls by hand. Nothing starts by itself.
+
+- **Scripts**: `narration/fr.json` and `narration/en.json` (one segment each, in the tone of Pelton Lab's guide: `node
+tools/narration/tone-stats.mjs narration/fr.json` compares). Cues move the page: `[[lab:top]]`, `[[lab:step:2]]`,
+  `[[lab:section:labs]]` (`labs`, `planned`, `inside`, `about`), `[[lab:card:<slug>]]`. A test checks that both languages say the
+  same things in the same order and that every cue points at something that exists.
+- **Audio**: `npm run narration -- --dry-run` prints the cost and calls nothing (0 credit); `npm run narration` generates it
+  (about one credit per character: **ask the owner first**). The key lives in `~/.config/lab-narration/elevenlabs.env`, never in the
+  repository. Files go to `public/audio/<lang>/`. A hash cache means unchanged text is never billed twice.
+- **Until the audio exists, the tour button is not drawn.** `npm run build` checks the manifest against the script and the cues
+  against the labs, and requires both languages together.
+- **When you add a lab**, add a sentence with its `[[lab:card:<slug>]]` cue to both scripts, then run `npm run narration`: only the
+  changed text is billed.
+
 ## Domain and address
 
 The site lives at the root of its own domain: asset paths are absolute and the English page is `/en/`. The prerender writes
@@ -201,6 +220,25 @@ Autres cas :
 `src/data/schema.ts` décrit une fiche et le build la contrôle. `add-lab` convertit les étiquettes de `lab.json` en quatre domaines
 (`wind` → électricité, `hydraulics` → eau, `hydro` → eau et électricité…) ; les autres restent des étiquettes libres, traduites par
 `src/i18n` quand elle les connaît. Un lab dont le `lab.json` est encore celui du modèle ne peut pas être ajouté en `live`.
+
+## Visite guidée vocale
+
+Une voix accompagne le visiteur sur le site : l’accueil, chaque lab, « Dans chaque lab », À propos. C’est la **même voix de synthèse
+que dans les labs** (ElevenLabs, toujours signalée _voix de synthèse_). La page suit la voix (elle défile, un cadre marque le lab dont
+on parle, la roue de l’accueil se démonte au bon moment), avec sous-titres, barre de position, vitesse et un interrupteur
+**Guidage** qui lâche la main dès que le visiteur défile lui-même. Rien ne démarre tout seul.
+
+- **Scripts** : `narration/fr.json` et `narration/en.json` (un segment chacun, dans le ton du guide de Pelton Lab : `node
+tools/narration/tone-stats.mjs narration/fr.json` compare). Les repères déplacent la page : `[[lab:top]]`, `[[lab:step:2]]`,
+  `[[lab:section:labs]]` (`labs`, `planned`, `inside`, `about`), `[[lab:card:<slug>]]`. Un test vérifie que les deux langues disent la
+  même chose dans le même ordre et que chaque repère vise quelque chose qui existe.
+- **Audio** : `npm run narration -- --dry-run` donne le coût sans rien appeler (0 crédit) ; `npm run narration` le génère (environ un
+  crédit par caractère : **demander d’abord au propriétaire**). La clé est dans `~/.config/lab-narration/elevenlabs.env`, jamais dans le
+  dépôt. Les fichiers vont dans `public/audio/<langue>/`. Un cache par empreinte ne refacture jamais un texte inchangé.
+- **Tant que l’audio n’existe pas, le bouton de visite n’est pas dessiné.** `npm run build` vérifie le manifeste contre le script et
+  les repères contre les labs, et exige les deux langues ensemble.
+- **Quand on ajoute un lab**, ajouter une phrase avec son repère `[[lab:card:<slug>]]` aux deux scripts, puis `npm run narration` :
+  seul le texte modifié est facturé.
 
 ## Domaine et adresse
 

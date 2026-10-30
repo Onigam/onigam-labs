@@ -1,0 +1,21 @@
+{
+  "lang": "fr",
+  "voiceLabel": {
+    "fr": "Voix de synthèse",
+    "en": "Synthetic voice"
+  },
+  "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.8,
+    "style": 0.35,
+    "speed": 0.95
+  },
+  "segments": [
+    {
+      "id": "intro",
+      "scope": "intro",
+      "title": "Visite guidée du site",
+      "text": "[[lab:top]] Bienvenue dans les labs ! Ici, on ne regarde pas les machines de loin : on les démonte. [[lab:step:1]] Voici une roue, vue de biais. Elle tourne doucement. Dans un lab, on en fait le tour, on isole une pièce, on l’ouvre en coupe. [[lab:step:2]] Puis tout se défait. Les vingt-six petites cuillères s’écartent, le moyeu se soulève, l’arbre sort de son logement… Chaque pièce a sa fiche : un aperçu, des caractéristiques, de quoi l’entretenir. [[lab:step:3]] Et quand tout est remonté, l’eau revient. Une simulation en direct : on change la chute, le débit ou le vent, et on lit ce qui en sort. [[lab:section:labs]] Voici les labs. Chacun est un site à part : on l’ouvre, on joue, et on revient ici choisir le suivant. Par lequel commencer ? [[lab:card:pelton-lab]] Le premier suit un petit ruisseau de montagne, de la prise d’eau jusqu’à la batterie, en passant par une roue à cuillères. [[lab:card:ram-pump-lab]] Le deuxième est un bélier hydraulique : une pompe sans moteur, qui monte l’eau d’une source bien plus haut, avec la seule énergie de l’eau qui descend. [[lab:card:piggott-lab]] Le troisième est une éolienne en bois, taillée à la main : elle charge une batterie quand le vent se lève, et se met à l’abri quand il forcit. [[lab:card:mill-lab]] Un quatrième se construit en ce moment : une vis d’Archimède et une roue à aubes. [[lab:section:planned]] D’autres suivront, du chauffe-eau solaire à la batterie de sable. Sans date : un lab sort quand il est prêt. [[lab:section:inside]] Dans chaque lab, on retrouve les mêmes repères : des vues en trois dimensions, une fiche par pièce, un guide de montage, une simulation, des plans, de courtes leçons. Et parfois, une voix comme celle-ci. [[lab:section:about]] Un mot d’honnêteté, dit une seule fois. Ces labs sont des reconstitutions pédagogiques indépendantes, inspirées de vidéos publiques : ni plans officiels, ni produits de constructeur. Les sources sont créditées ici, et dans chaque lab. Cette voix est une voix de synthèse. Et pour construire pour de vrai, prenez les précautions d’usage : l’électricité, l’eau et le feu ont leurs règles. [[lab:section:labs]] À vous de jouer !"
+    }
+  ]
+}

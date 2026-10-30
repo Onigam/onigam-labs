@@ -1,0 +1,21 @@
+{
+  "lang": "en",
+  "voiceLabel": {
+    "fr": "Voix de synthèse",
+    "en": "Synthetic voice"
+  },
+  "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.8,
+    "style": 0.35,
+    "speed": 0.95
+  },
+  "segments": [
+    {
+      "id": "intro",
+      "scope": "intro",
+      "title": "Guided tour of the site",
+      "text": "[[lab:top]] Welcome to the labs! Here, we don’t look at machines from far away: we take them apart. [[lab:step:1]] This is a wheel, seen at an angle. It turns slowly. In a lab, you can walk around it, isolate a part, cut it open. [[lab:step:2]] Then everything comes undone. The twenty-six little cups fan out, the hub lifts off, the shaft slides out of its seat… Every part has its own sheet: an overview, its specifications, how to look after it. [[lab:step:3]] And once it is all back together, the water returns. A live simulation: you change the head, the flow or the wind, and read what comes out. [[lab:section:labs]] Here are the labs. Each one is a site of its own: you open it, you play, and you come back here to pick the next. Which one first? [[lab:card:pelton-lab]] The first follows a small mountain stream, from the intake all the way to the battery, through a wheel of little cups. [[lab:card:ram-pump-lab]] The second is a hydraulic ram: a pump with no motor, which lifts spring water far higher, using only the energy of the water that falls. [[lab:card:piggott-lab]] The third is a wooden wind turbine, carved by hand: it charges a battery when the wind picks up, and steps out of the way when it gets too strong. [[lab:card:mill-lab]] A fourth is being built right now: an Archimedes screw and a water wheel. [[lab:section:planned]] More will follow, from the solar water heater to the sand battery. No dates: a lab ships when it is ready. [[lab:section:inside]] Inside every lab, you find the same bearings: views in three dimensions, a sheet for every part, an assembly guide, a simulation, drawings, short lessons. And sometimes, a voice like this one. [[lab:section:about]] A word of honesty, said just once. These labs are independent educational reconstructions, inspired by public videos: neither official drawings nor makers’ products. The sources are credited here, and inside every lab. This voice is a synthetic voice. And if you build for real, take the usual precautions: electricity, water and fire have their rules. [[lab:section:labs]] Over to you!"
+    }
+  ]
+}

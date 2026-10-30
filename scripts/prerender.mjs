@@ -101,11 +101,20 @@ function head(lang) {
     <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`;
 }
 
+/** Length of the spoken tour, if its audio exists (scripts/check-narration.mjs has already vouched for it). */
+function tourSeconds(lang) {
+  const file = path.join(dist, 'audio', lang, 'manifest.json');
+  return fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')).totalSeconds : undefined;
+}
+
 function page(lang) {
   const html = template
     .replace('<html lang="fr">', `<html lang="${lang}">`)
     .replace('<!--head-->', head(lang))
-    .replace('<div id="app"><!--app--></div>', `<div id="app" data-prerendered>${render(lang, year)}</div>`);
+    .replace(
+      '<div id="app"><!--app--></div>',
+      `<div id="app" data-prerendered>${render(lang, year, tourSeconds(lang))}</div>`,
+    );
   if (html === template) throw new Error('the template placeholders were not found in dist/index.html');
   return html;
 }

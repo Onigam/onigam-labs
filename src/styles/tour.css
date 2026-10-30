@@ -1,0 +1,246 @@
+/* The spoken guided tour: a bar fixed at the bottom, subtitles above it, and a ring on what the voice is talking about. */
+.btn--tour {
+  gap: 10px;
+}
+.btn--tour .mono {
+  padding: 1px 8px;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.btn--tour svg {
+  color: var(--accent-ink);
+}
+.btn--quiet {
+  border-color: transparent;
+  text-decoration: underline;
+  text-decoration-color: var(--line-2);
+  text-underline-offset: 5px;
+}
+.btn--quiet:hover {
+  background: transparent;
+  text-decoration-color: currentColor;
+}
+.tour-btn svg {
+  color: var(--accent-ink);
+}
+:root[data-tour-playing] .tour-btn {
+  border-color: var(--accent);
+}
+@media (max-width: 479px) {
+  .tour-btn {
+    display: none;
+  }
+}
+
+html[data-tour] body {
+  padding-bottom: 190px;
+}
+
+.tour {
+  position: fixed;
+  z-index: 60;
+  left: 50%;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  display: grid;
+  gap: 10px;
+  width: min(100% - 24px, 1000px);
+  transform: translateX(-50%);
+}
+.tour__caption {
+  justify-self: center;
+  max-width: 64ch;
+  margin: 0;
+  padding: 9px 18px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--ink) 90%, transparent);
+  color: var(--bg);
+  font-size: 1.08rem;
+  line-height: 1.4;
+  text-align: center;
+  text-wrap: balance;
+}
+.tour__caption:empty {
+  display: none;
+}
+.tour__resume {
+  display: none;
+  justify-self: center;
+  min-height: 40px;
+  padding: 0 18px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--accent-ink);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+.tour[data-detached] .tour__resume {
+  display: inline-flex;
+  align-items: center;
+}
+.tour__bar {
+  display: grid;
+  grid-template-columns: auto minmax(120px, 0.9fr) minmax(100px, 2fr) auto auto auto auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--surface);
+  border: 1px solid var(--line-2);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.tour__play,
+.tour__close {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.tour__play {
+  border: 0;
+  background: var(--accent);
+  color: var(--on-accent);
+}
+.tour__play svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+.tour__play .i-pause,
+.tour__play .i-replay,
+.tour__play[data-state='playing'] .i-play,
+.tour__play[data-state='ended'] .i-play {
+  display: none;
+}
+.tour__play[data-state='playing'] .i-pause,
+.tour__play[data-state='ended'] .i-replay {
+  display: block;
+}
+.tour__play .i-replay {
+  fill: none;
+}
+.tour__close {
+  border: 1px solid var(--line-2);
+  background: transparent;
+}
+.tour__close:hover {
+  background: color-mix(in srgb, var(--ink) 7%, transparent);
+}
+.tour__close svg {
+  width: 20px;
+  height: 20px;
+}
+.tour__info {
+  display: grid;
+  min-width: 0;
+  line-height: 1.25;
+}
+.tour__info strong {
+  overflow: hidden;
+  font-size: 0.97rem;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tour__info span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-2);
+  font-size: 0.82rem;
+}
+.tour__info svg {
+  width: 15px;
+  height: 15px;
+  color: var(--accent-ink);
+}
+.tour__seek {
+  width: 100%;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+.tour__time {
+  font-size: 0.82rem;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.tour__chip {
+  min-height: 38px;
+  padding: 0 13px;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  background: transparent;
+  font-size: 0.86rem;
+  font-weight: 540;
+  cursor: pointer;
+}
+.tour__chip[aria-pressed='true'] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--bg);
+}
+.tour__chip:hover {
+  border-color: var(--ink);
+}
+@media (max-width: 859px) {
+  .tour__bar {
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    grid-template-areas:
+      'play info info close'
+      'seek seek seek time'
+      'speed cc guide guide';
+    gap: 10px 10px;
+    padding: 12px;
+  }
+  .tour__play {
+    grid-area: play;
+  }
+  .tour__info {
+    grid-area: info;
+  }
+  .tour__close {
+    grid-area: close;
+  }
+  .tour__seek {
+    grid-area: seek;
+  }
+  .tour__time {
+    grid-area: time;
+  }
+  .tour__speed {
+    grid-area: speed;
+  }
+  .tour__cc {
+    grid-area: cc;
+  }
+  .tour__guide {
+    grid-area: guide;
+    justify-self: start;
+  }
+  html[data-tour] body {
+    padding-bottom: 240px;
+  }
+}
+
+.is-tour {
+  outline: 3px solid var(--accent);
+  outline-offset: 8px;
+  border-radius: var(--radius);
+  animation: tour-ring 1.6s ease-out 1;
+}
+.soon.is-tour,
+.soon__item.is-tour {
+  border-radius: 6px;
+}
+@keyframes tour-ring {
+  from {
+    outline-offset: 22px;
+    outline-color: transparent;
+  }
+}

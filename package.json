@@ -6,15 +6,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && node scripts/check-labs.mjs && vite build && vite build --ssr src/entry-server.ts --outDir .ssr && node scripts/prerender.mjs",
+    "build": "tsc --noEmit && node scripts/check-labs.mjs && node scripts/check-narration.mjs && vite build && vite build --ssr src/entry-server.ts --outDir .ssr && node scripts/prerender.mjs",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "check-labs": "node scripts/check-labs.mjs",
     "add-lab": "node scripts/add-lab.mjs",
     "og": "node scripts/og.mjs",
-    "format": "prettier --write \"src/**/*.{ts,css,json}\" \"*.md\" \"docs/*.md\" \"scripts/*.mjs\"",
-    "format:check": "prettier --check \"src/**/*.{ts,css,json}\" \"*.md\" \"docs/*.md\" \"scripts/*.mjs\""
+    "format": "prettier --write \"src/**/*.{ts,css,json}\" \"*.md\" \"docs/*.md\" \"scripts/*.mjs\" \"scripts/lib/*.mjs\" \"narration/*.json\"",
+    "format:check": "prettier --check \"src/**/*.{ts,css,json}\" \"*.md\" \"docs/*.md\" \"scripts/*.mjs\" \"scripts/lib/*.mjs\" \"narration/*.json\"",
+    "narration": "node scripts/narration.mjs"
   },
   "license": "MIT",
   "devDependencies": {

@@ -5,4 +5,4 @@ import { DICTS, PATHS } from './i18n';
 import { SITE, renderPage } from './render/page';
 
 export { LABS, DICTS, PATHS, SITE };
-export const render = (lang: Lang, year: number): string => renderPage(lang, year);
+export const render = (lang: Lang, year: number, tour?: number): string => renderPage(lang, year, tour);

@@ -18,12 +18,17 @@ const explosion = (p: number): number => 0.06 + 0.94 * smooth(0.2, 0.52, p) * (1
 /** The state a step shows when it is picked by hand (reduced motion). */
 const MANUAL = [0.08, 1, 0.1];
 
-export function initStory(hero: HTMLElement): void {
+export interface Story {
+  /** Brings the hero to step `i` (0, 1 or 2): scrolls to it, or sets it by hand with reduced motion. */
+  goStep(i: number, smooth?: boolean): void;
+}
+
+export function initStory(hero: HTMLElement): Story | null {
   const runner = hero.querySelector<HTMLElement>('[data-runner]');
   const pin = hero.querySelector<HTMLElement>('.hero__pin');
   const figure = hero.querySelector<HTMLElement>('.hero__figure');
   const steps = [...hero.querySelectorAll<HTMLElement>('.step')];
-  if (!runner || !pin || !figure) return;
+  if (!runner || !pin || !figure) return null;
 
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
   const wide = matchMedia('(min-width: 960px) and (min-height: 620px)');
@@ -90,16 +95,15 @@ export function initStory(hero: HTMLElement): void {
   };
 
   let manual = -1;
-  steps.forEach((s, i) =>
-    s.querySelector('button')?.addEventListener('click', () => {
-      if (reduce.matches) {
-        manual = i;
-        aim(MANUAL[i], (STAGES[i][0] + STAGES[i][1]) / 2);
-      } else {
-        scrollTo({ top: scrollFor((STAGES[i][0] + STAGES[i][1]) / 2), behavior: 'smooth' });
-      }
-    }),
-  );
+  const goStep = (i: number, smooth = true): void => {
+    if (reduce.matches) {
+      manual = i;
+      aim(MANUAL[i], (STAGES[i][0] + STAGES[i][1]) / 2);
+    } else {
+      scrollTo({ top: scrollFor((STAGES[i][0] + STAGES[i][1]) / 2), behavior: smooth ? 'smooth' : 'auto' });
+    }
+  };
+  steps.forEach((s, i) => s.querySelector('button')?.addEventListener('click', () => goStep(i)));
 
   const setup = (): void => {
     if (reduce.matches) {
@@ -120,4 +124,5 @@ export function initStory(hero: HTMLElement): void {
   addEventListener('resize', () => !reduce.matches && onScroll());
   reduce.addEventListener('change', setup);
   setup();
+  return { goStep };
 }

@@ -2,6 +2,7 @@ import { LABS } from '../data/labs';
 import { DOMAINS, THUMB_WIDTHS, type Domain, type LabEntry, type Lang, type Status } from '../data/schema';
 import { DICTS, PATHS, type Dict } from '../i18n';
 import { esc } from './html';
+import { clock } from './format';
 import { ICONS, markSvg } from './icons';
 import { runnerSvg } from './runner';
 
@@ -13,7 +14,7 @@ export const SITE = {
 
 const LANG_NAMES: Record<Lang, string> = { fr: 'FR', en: 'EN' };
 
-function header(lang: Lang, t: Dict): string {
+function header(lang: Lang, t: Dict, tour?: number): string {
   const langLinks = (['fr', 'en'] as const)
     .map((l) => {
       const current = l === lang;
@@ -30,6 +31,7 @@ function header(lang: Lang, t: Dict): string {
     </nav>
     <div class="tools">
       <div class="lang" role="group" aria-label="${esc(t.a11y.language)}">${langLinks}</div>
+      ${tour ? `<button class="icon-btn tour-btn" type="button" data-tour-start aria-label="${esc(t.tour.headerAria)}">${ICONS.speaker}</button>` : ''}
       <button class="icon-btn theme" type="button" data-theme-toggle aria-label="${esc(t.a11y.themeToDark)}" data-label-dark="${esc(t.a11y.themeToDark)}" data-label-light="${esc(t.a11y.themeToLight)}">${ICONS.sun}${ICONS.moon}</button>
       <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="${esc(t.a11y.menu)}" data-menu data-label-open="${esc(t.a11y.menu)}" data-label-close="${esc(t.a11y.menuClose)}">${ICONS.menu}${ICONS.close}</button>
     </div>
@@ -37,7 +39,7 @@ function header(lang: Lang, t: Dict): string {
 </header>`;
 }
 
-function hero(t: Dict): string {
+function hero(t: Dict, tour?: number): string {
   const steps = t.hero.steps
     .map(
       (s, i) => `<li class="step" data-step="${i + 1}">
@@ -54,7 +56,8 @@ function hero(t: Dict): string {
         <p class="lead">${esc(t.hero.lead)}</p>
         <div class="cta">
           <a class="btn btn--primary" href="#labs">${esc(t.hero.primary)}</a>
-          <a class="btn" href="${SITE.repo}">${ICONS.github}${esc(t.hero.secondary)}</a>
+          ${tour ? `<button class="btn btn--tour" type="button" data-tour-start aria-label="${esc(t.tour.buttonAria(clock(tour)))}">${ICONS.speaker}${esc(t.tour.button)}<span class="mono">${clock(tour)}</span></button>` : ''}
+          <a class="btn${tour ? ' btn--quiet' : ''}" href="${SITE.repo}">${ICONS.github}${esc(t.hero.secondary)}</a>
         </div>
       </div>
       <div class="hero__figure">
@@ -240,12 +243,13 @@ function footer(t: Dict, year: number): string {
 }
 
 /** The whole page body for one language. Rendered at build time (prerender) and, in dev, in the browser. */
-export function renderPage(lang: Lang, year = new Date().getFullYear()): string {
+/** `tour` is the length in seconds of the spoken tour when its audio exists (no audio, no button). */
+export function renderPage(lang: Lang, year = new Date().getFullYear(), tour?: number): string {
   const t = DICTS[lang];
   return `<a class="skip" href="#main">${esc(t.a11y.skip)}</a>
-${header(lang, t)}
+${header(lang, t, tour)}
 <main id="main">
-${hero(t)}
+${hero(t, tour)}
 ${labsSection(lang, t)}
 ${insideSection(t)}
 ${aboutSection(lang, t)}
