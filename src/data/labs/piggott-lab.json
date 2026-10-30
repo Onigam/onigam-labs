@@ -2,10 +2,7 @@
   "slug": "piggott-lab",
   "order": 3,
   "status": "live",
-  "title": {
-    "fr": "Piggott Lab",
-    "en": "Piggott Lab"
-  },
+  "title": { "fr": "Piggott Lab", "en": "Piggott Lab" },
   "tagline": {
     "fr": "Une éolienne en bois qui charge une batterie",
     "en": "A wooden wind turbine that charges a battery"
@@ -19,12 +16,7 @@
   "liveUrl": "https://piggott-lab.vercel.app",
   "thumbnail": "piggott-lab",
   "repoUrl": "https://github.com/Onigam/piggott-lab",
-  "capture": {
-    "scene": "turbine",
-    "explode": 0.5,
-    "zoom": 1.7,
-    "focus": [0.49, 0.54]
-  },
+  "capture": { "scene": "turbine", "explode": 0.5, "zoom": 1.7, "focus": [0.49, 0.54] },
   "sources": [
     {
       "title": "How to build homemade Piggott wind turbine",

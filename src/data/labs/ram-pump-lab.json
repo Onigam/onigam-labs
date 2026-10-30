@@ -2,14 +2,8 @@
   "slug": "ram-pump-lab",
   "order": 2,
   "status": "live",
-  "title": {
-    "fr": "Labo du bélier hydraulique",
-    "en": "Hydraulic Ram Lab"
-  },
-  "tagline": {
-    "fr": "Pomper l’eau sans électricité ni carburant",
-    "en": "Pumping water with no electricity or fuel"
-  },
+  "title": { "fr": "Labo du bélier hydraulique", "en": "Hydraulic Ram Lab" },
+  "tagline": { "fr": "Pomper l’eau sans électricité ni carburant", "en": "Pumping water with no electricity or fuel" },
   "domains": ["water"],
   "tags": ["hydraulics", "off-grid"],
   "difficulty": 2,
@@ -19,12 +13,7 @@
   "liveUrl": "https://ram-pump-lab.vercel.app",
   "thumbnail": "ram-pump-lab",
   "repoUrl": "https://github.com/Onigam/ram-pump-lab",
-  "capture": {
-    "scene": "ram",
-    "explode": 0.6,
-    "zoom": 1.35,
-    "focus": [0.5, 0.53]
-  },
+  "capture": { "scene": "ram", "explode": 0.6, "zoom": 1.35, "focus": [0.5, 0.53] },
   "sources": [
     {
       "title": "Création clapet de choc pour que notre bélier hydraulique ne s’arrête plus",

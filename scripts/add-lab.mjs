@@ -124,6 +124,28 @@ function splitTags(tags = []) {
   return { domains: [...domains], free };
 }
 
+const KEY_ORDER = [
+  'slug',
+  'order',
+  'status',
+  'title',
+  'tagline',
+  'domains',
+  'tags',
+  'difficulty',
+  'minutes',
+  'languages',
+  'spokenGuide',
+  'liveUrl',
+  'thumbnail',
+  'repoUrl',
+  'capture',
+  'sources',
+];
+/** Keys in a stable order, so refreshing an entry never shows up as a diff. */
+const canonical = (entry) =>
+  Object.fromEntries(Object.entries(entry).sort(([a], [b]) => KEY_ORDER.indexOf(a) - KEY_ORDER.indexOf(b)));
+
 /** Same rule as `pick`, for the lists derived from the tags. */
 const pickList = (own, fromLab, status) =>
   status === 'live' ? (fromLab.length ? fromLab : (own ?? [])) : (own ?? fromLab);
@@ -215,10 +237,10 @@ async function addLab(slug) {
   if (!entry.sources.length && status === 'live')
     console.warn(`! no sources yet: add them to src/data/labs/${slug}.json (the site credits them in About)`);
 
-  const clean = JSON.parse(JSON.stringify(entry));
+  const clean = canonical(JSON.parse(JSON.stringify(entry)));
   const errors = validateLab(clean, slug);
   fs.writeFileSync(file, JSON.stringify(clean, null, 2) + '\n');
-  execFileSync('npx', ['prettier', '--write', file], { cwd: ROOT, stdio: 'ignore' });
+  execFileSync('npx', ['prettier', '--object-wrap', 'collapse', '--write', file], { cwd: ROOT, stdio: 'ignore' });
   if (errors.length) {
     console.error(`\n! ${slug}.json written, but it needs a fix before the build passes:`);
     errors.forEach((e) => console.error(`    - ${e}`));
@@ -237,7 +259,7 @@ async function captureOnly(slug) {
   if (entry.thumbnail !== slug) {
     entry.thumbnail = slug;
     fs.writeFileSync(file, JSON.stringify(entry, null, 2) + '\n');
-    execFileSync('npx', ['prettier', '--write', file], { cwd: ROOT, stdio: 'ignore' });
+    execFileSync('npx', ['prettier', '--object-wrap', 'collapse', '--write', file], { cwd: ROOT, stdio: 'ignore' });
   }
   console.log(`✓ thumbnails of ${slug} taken again`);
 }
