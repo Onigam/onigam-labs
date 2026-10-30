@@ -1,18 +1,57 @@
 {
   "slug": "mill-lab",
-  "order": 1,
-  "status": "building",
+  "order": 4,
+  "status": "live",
   "title": { "fr": "Mill Lab", "en": "Mill Lab" },
   "tagline": {
-    "fr": "Vis d’Archimède et roue à aubes : de la chute d’eau à l’électricité",
-    "en": "Archimedes screw and water wheel: from falling water to electricity"
+    "fr": "Une vis d’Archimède, une petite chute, de l’électricité",
+    "en": "An Archimedes screw, a small head, electricity"
   },
   "domains": ["water", "electricity"],
-  "tags": ["hydro", "off-grid"],
+  "tags": ["off-grid"],
   "difficulty": 2,
-  "minutes": 25,
+  "minutes": 20,
   "languages": ["fr", "en"],
   "spokenGuide": [],
+  "liveUrl": "https://mill-lab.onigam.io",
+  "thumbnail": "mill-lab",
   "repoUrl": "https://github.com/Onigam/mill-lab",
-  "sources": []
+  "capture": { "scene": "screw", "cutaway": true, "zoom": 2, "focus": [0.4, 0.55] },
+  "sources": [
+    {
+      "title": "Autonomie : L’HYDROÉLECTRICITÉ du futur se trouve dans les vieux MOULINS d’hier",
+      "author": "L’ArchiPelle",
+      "url": "https://www.youtube.com/watch?v=hM4cDkSSsrQ",
+      "year": 2025
+    },
+    {
+      "title": "Un Moulin à eau transformé en mini CENTRALE HYDROÉLECTRIQUE",
+      "author": "L’ArchiPelle",
+      "url": "https://www.youtube.com/watch?v=YRPMVPFl5z4",
+      "year": 2023
+    },
+    {
+      "title": "Je fabrique une roue à eau pour avoir de l’électricité",
+      "author": "Paulygones",
+      "url": "https://www.youtube.com/watch?v=faqLmwqATMc",
+      "year": 2022
+    },
+    {
+      "title": "Elle conçoit une MICRO CENTRALE hydroélectrique en pleine montagne !",
+      "author": "Révolution Énergétique",
+      "url": "https://www.youtube.com/watch?v=vumEzd2KRMA",
+      "year": 2025
+    },
+    {
+      "title": "Viseta : une pico centrale hydroélectrique low-tech pour transformer les moulins en générateur d’énergie (4 à 10 kW)",
+      "author": "NeozOne",
+      "url": "https://www.neozone.org/innovation/viseta-une-pico-centrale-hydroelectrique-low-tech-pour-transformer-les-moulins-en-generateur-denergie-4-a-10-kw/"
+    },
+    {
+      "title": "The Turn of the Screw: Optimal Design of an Archimedes Screw",
+      "author": "Chris Rorres",
+      "url": "https://math.nyu.edu/Archimedes/Screw/optimal/screw.pdf",
+      "year": 2000
+    }
+  ]
 }

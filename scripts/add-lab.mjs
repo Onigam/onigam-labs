@@ -150,6 +150,17 @@ const canonical = (entry) =>
 const pickList = (own, fromLab, status) =>
   status === 'live' ? (fromLab.length ? fromLab : (own ?? [])) : (own ?? fromLab);
 
+/** The saved thumbnail framing, changed by the framing flags of this run (so a refresh frames it the same way). */
+function framing(saved) {
+  const capture = { ...(saved ?? {}) };
+  if (v.scene) capture.scene = v.scene;
+  if (v.explode !== undefined) capture.explode = Number(v.explode);
+  if (v.cutaway) capture.cutaway = true;
+  if (v.zoom) capture.zoom = Number(v.zoom);
+  if (v.focus) capture.focus = v.focus.split(',').map(Number);
+  return capture;
+}
+
 async function addLab(slug) {
   if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(slug)) fail(`"${slug}" is not a lab slug (kebab-case, like pelton-lab)`);
   const file = entryPath(slug);
@@ -220,12 +231,7 @@ async function addLab(slug) {
     console.log(`· spoken guides found: ${entry.spokenGuide.join(', ') || 'none'}`);
   }
   if (existing?.thumbnail) entry.thumbnail = existing.thumbnail;
-  const capture = { ...(existing?.capture ?? {}) };
-  if (v.scene) capture.scene = v.scene;
-  if (v.explode !== undefined) capture.explode = Number(v.explode);
-  if (v.cutaway) capture.cutaway = true;
-  if (v.zoom) capture.zoom = Number(v.zoom);
-  if (v.focus) capture.focus = v.focus.split(',').map(Number);
+  const capture = framing(existing?.capture);
   if (Object.keys(capture).length) entry.capture = capture;
   entry.sources = useLab && Array.isArray(lab.sources) && lab.sources.length ? lab.sources : (existing?.sources ?? []);
 
@@ -255,10 +261,12 @@ async function captureOnly(slug) {
   if (!fs.existsSync(file)) fail(`No entry for ${slug}: run add-lab without --capture-only first.`);
   const entry = readJson(file);
   if (entry.status !== 'live') fail(`${slug} is not live: there is nothing to capture.`);
-  await captureLab({ url: entry.liveUrl, slug, outDir: OUT_DIR, shot: entry.capture ?? {} });
-  if (entry.thumbnail !== slug) {
+  const capture = framing(entry.capture);
+  await captureLab({ url: entry.liveUrl, slug, outDir: OUT_DIR, shot: capture });
+  if (entry.thumbnail !== slug || JSON.stringify(capture) !== JSON.stringify(entry.capture ?? {})) {
     entry.thumbnail = slug;
-    fs.writeFileSync(file, JSON.stringify(entry, null, 2) + '\n');
+    if (Object.keys(capture).length) entry.capture = capture;
+    fs.writeFileSync(file, JSON.stringify(canonical(entry), null, 2) + '\n');
     execFileSync('npx', ['prettier', '--object-wrap', 'collapse', '--write', file], { cwd: ROOT, stdio: 'ignore' });
   }
   console.log(`✓ thumbnails of ${slug} taken again`);
