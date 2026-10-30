@@ -10,7 +10,7 @@
   "minutes": 20,
   "languages": ["fr", "en"],
   "spokenGuide": ["fr", "en"],
-  "liveUrl": "https://ram-pump-lab.vercel.app",
+  "liveUrl": "https://ram-pump-lab.onigam.io",
   "thumbnail": "ram-pump-lab",
   "repoUrl": "https://github.com/Onigam/ram-pump-lab",
   "capture": { "scene": "ram", "explode": 0.6, "zoom": 1.35, "focus": [0.5, 0.53] },

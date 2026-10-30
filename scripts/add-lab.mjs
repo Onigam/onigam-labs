@@ -31,8 +31,8 @@ const DOMAIN_WORDS = new Set(['electricity', 'water', 'heat', 'storage']);
 const HELP = `Usage: npm run add-lab <slug> [options]
 
   --status live|building|planned   default live (building and planned never overwrite hand-written text)
-  --from <folder|url>              where to read public/lab.json (default ../<slug>, else https://<slug>.vercel.app)
-  --url <url>                      live address (default https://<slug>.vercel.app)
+  --from <folder|url>              where to read public/lab.json (default ../<slug>, else https://<slug>.onigam.io)
+  --url <url>                      live address (default https://<slug>.onigam.io)
   --repo <url>                     GitHub address (default: the origin of the local folder, else github.com/Onigam/<slug>)
   --domains a,b                    force the domains (electricity, heat, water, storage)
   --order <n>                      position inside its status group (default: after the others)
@@ -156,7 +156,7 @@ async function addLab(slug) {
   const existing = fs.existsSync(file) ? readJson(file) : null;
   const status = v.status ?? (existing && existing.status !== 'planned' ? existing.status : 'live');
   if (!['live', 'building', 'planned'].includes(status)) fail(`--status must be live, building or planned`);
-  const liveUrl = (v.url ?? existing?.liveUrl ?? `https://${slug}.vercel.app`).replace(/\/$/, '');
+  const liveUrl = (v.url ?? existing?.liveUrl ?? `https://${slug}.onigam.io`).replace(/\/$/, '');
   const found = await readLabJson(slug, liveUrl);
   const lab = found?.json ?? null;
   console.log(

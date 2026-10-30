@@ -10,13 +10,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(ROOT, 'dist');
 const ssrDir = path.join(ROOT, '.ssr');
 
-// The public address: set SITE_URL once the domain is chosen (e.g. https://labs.onigam.io), else Vercel's.
-const SITE_URL = (
-  process.env.SITE_URL ??
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : 'https://onigam-labs.vercel.app')
-).replace(/\/$/, '');
+// The public address. A fork sets SITE_URL to its own domain.
+const SITE_URL = (process.env.SITE_URL ?? 'https://labs.onigam.io').replace(/\/$/, '');
 
 const entryFile = fs.readdirSync(ssrDir).find((f) => /^entry-server\.m?js$/.test(f));
 if (!entryFile)

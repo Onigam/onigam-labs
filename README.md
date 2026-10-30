@@ -4,7 +4,7 @@ The showcase of the **Onigam labs**: interactive 3D labs that explain how water,
 Each lab is an independent site (a Pelton turbine, a hydraulic ram, a wind turbine…); this site is their front door, in
 French and English.
 
-**▶ https://onigam-labs.vercel.app** · French at `/`, English at `/en/` · light and dark · desktop, tablet and phone
+**▶ https://labs.onigam.io** · French at `/`, English at `/en/` · light and dark · desktop, tablet and phone
 
 🇫🇷 [Version française plus bas](#français)
 
@@ -45,7 +45,7 @@ Every lab is one file, `src/data/labs/<slug>.json`. For a lab that is finished a
 npm run add-lab <slug>            # e.g. npm run add-lab solar-heater-lab
 ```
 
-It reads the lab's `public/lab.json` (from `../<slug>` if you have the folder, else from `https://<slug>.vercel.app/lab.json`),
+It reads the lab's `public/lab.json` (from `../<slug>` if you have the folder, else from `https://<slug>.onigam.io/lab.json`),
 finds which spoken guides it ships (its `audio/<lang>/manifest.json`), takes the **thumbnails** in both languages with headless
 Chrome (a few minutes: the 3D scene is rendered in software), writes the entry and checks it. Then:
 
@@ -65,7 +65,7 @@ npm run add-lab ram-pump-lab -- --scene ram --cutaway           # in section ins
 npm run add-lab <slug> -- --capture-only                         # only take the thumbnails again
 ```
 
-(`--scene` is a world id of the lab, the one used in its URL hash: `https://pelton-lab.vercel.app/#turbine`.)
+(`--scene` is a world id of the lab, the one used in its URL hash: `https://pelton-lab.onigam.io/#turbine`.)
 
 Other cases:
 
@@ -92,7 +92,7 @@ An entry looks like this (`src/data/schema.ts` is the reference, and the build c
   "minutes": 20,
   "languages": ["fr", "en"],
   "spokenGuide": ["fr", "en"],
-  "liveUrl": "https://ram-pump-lab.vercel.app",
+  "liveUrl": "https://ram-pump-lab.onigam.io",
   "repoUrl": "https://github.com/Onigam/ram-pump-lab",
   "thumbnail": "ram-pump-lab",
   "capture": { "scene": "ram", "explode": 0.6, "zoom": 1.35 },
@@ -126,9 +126,11 @@ tools/narration/tone-stats.mjs narration/fr.json` compares). Cues move the page:
 ## Domain and address
 
 The site lives at the root of its own domain: asset paths are absolute and the English page is `/en/`. The prerender writes
-canonical links, `hreflang`, the sitemap and the share images' addresses from `SITE_URL` (default `https://onigam-labs.vercel.app`,
-or Vercel's production URL). Once a domain is chosen (for example `labs.onigam.io`), add it in the Vercel project settings and set
-`SITE_URL` there, then redeploy.
+canonical links, `hreflang`, the sitemap and the share images' addresses from `SITE_URL` (default `https://labs.onigam.io`). A fork
+adds its own domain in the Vercel project settings and sets `SITE_URL` there.
+
+Each lab has its own subdomain of `onigam.io`: `<slug>.onigam.io` (for example `https://pelton-lab.onigam.io`). That is the
+default `liveUrl` of `npm run add-lab`; pass `--url` for a lab that lives elsewhere.
 
 Share images (`public/og-fr.png`, `public/og-en.png`) are taken from the built site: `npm run build && npm run og`.
 
@@ -146,7 +148,7 @@ La vitrine des **labs Onigam** : des laboratoires 3D interactifs qui expliquent 
 des machines sans carburant. Chaque lab est un site indépendant (turbine Pelton, bélier hydraulique, éolienne…) ; ce site en est la
 porte d’entrée, en français et en anglais.
 
-**▶ https://onigam-labs.vercel.app** · français sur `/`, anglais sur `/en/` · clair et sombre · ordinateur, tablette et téléphone
+**▶ https://labs.onigam.io** · français sur `/`, anglais sur `/en/` · clair et sombre · ordinateur, tablette et téléphone
 
 > Les labs sont des reconstitutions pédagogiques indépendantes de machines vues dans des vidéos publiques. Ce ne sont ni des plans
 > officiels ni des produits de constructeur, et aucune image ni séquence de ces vidéos n’est reprise. Chaque lab crédite ses
@@ -185,7 +187,7 @@ Chaque lab est un fichier, `src/data/labs/<slug>.json`. Pour un lab terminé et 
 npm run add-lab <slug>            # par exemple : npm run add-lab solar-heater-lab
 ```
 
-La commande lit le `public/lab.json` du lab (dans `../<slug>` si le dossier est là, sinon sur `https://<slug>.vercel.app/lab.json`),
+La commande lit le `public/lab.json` du lab (dans `../<slug>` si le dossier est là, sinon sur `https://<slug>.onigam.io/lab.json`),
 repère les guides parlés (son `audio/<langue>/manifest.json`), prend les **vignettes** dans les deux langues avec Chrome sans écran
 (quelques minutes : la 3D est calculée par logiciel), écrit la fiche et la vérifie. Ensuite :
 
@@ -205,7 +207,7 @@ npm run add-lab ram-pump-lab -- --scene ram --cutaway           # en coupe plut�
 npm run add-lab <slug> -- --capture-only                         # refaire seulement les vignettes
 ```
 
-(`--scene` est l’identifiant d’un monde du lab, celui de son adresse : `https://pelton-lab.vercel.app/#turbine`.)
+(`--scene` est l’identifiant d’un monde du lab, celui de son adresse : `https://pelton-lab.onigam.io/#turbine`.)
 
 Autres cas :
 
@@ -244,8 +246,10 @@ tools/narration/tone-stats.mjs narration/fr.json` compare). Les repères déplac
 
 Le site vit à la racine de son propre domaine : les chemins sont absolus et la page anglaise est `/en/`. Le pré-rendu écrit les liens
 canoniques, `hreflang`, le plan du site et les adresses des images de partage à partir de `SITE_URL` (par défaut
-`https://onigam-labs.vercel.app`, ou l’adresse de production de Vercel). Quand le domaine est choisi (par exemple `labs.onigam.io`),
-l’ajouter dans les réglages du projet Vercel, définir `SITE_URL` là-bas, puis redéployer.
+`https://labs.onigam.io`). Un fork ajoute son propre domaine dans les réglages du projet Vercel et y définit `SITE_URL`.
+
+Chaque lab a son sous-domaine d’`onigam.io` : `<slug>.onigam.io` (par exemple `https://pelton-lab.onigam.io`). C’est le `liveUrl` par
+défaut de `npm run add-lab` ; `--url` pour un lab qui vit ailleurs.
 
 Les images de partage (`public/og-fr.png`, `public/og-en.png`) sont prises depuis le site construit : `npm run build && npm run og`.
 

@@ -13,7 +13,7 @@
   "minutes": 25,
   "languages": ["fr", "en"],
   "spokenGuide": ["fr", "en"],
-  "liveUrl": "https://piggott-lab.vercel.app",
+  "liveUrl": "https://piggott-lab.onigam.io",
   "thumbnail": "piggott-lab",
   "repoUrl": "https://github.com/Onigam/piggott-lab",
   "capture": { "scene": "turbine", "explode": 0.5, "zoom": 1.7, "focus": [0.49, 0.54] },
