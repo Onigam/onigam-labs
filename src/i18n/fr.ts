@@ -147,6 +147,61 @@ export const fr = {
   footer: {
     licence: 'Licence MIT',
     privacy: 'Pas de cookies, pas de statistiques.',
+    privacyLink: 'Confidentialité',
+  },
+  privacyPage: {
+    title: 'Confidentialité',
+    description:
+      'Ce que le site, les labs et l’outil d’envoi de films font de vos données : presque rien, et voici le détail.',
+    updated: 'Mise à jour le 1er novembre 2026.',
+    back: 'Retour aux labs',
+    sections: [
+      {
+        title: 'L’essentiel',
+        paragraphs: [
+          'Ni ce site ni les labs ne demandent de compte ou d’adresse e-mail. Ils ne posent aucun cookie et n’utilisent aucun outil de statistiques ni de publicité.',
+        ],
+      },
+      {
+        title: 'Ce qui reste dans votre navigateur',
+        paragraphs: [
+          'Vos préférences sont gardées dans votre navigateur et ne sont envoyées nulle part : la langue, le thème, les réglages du guide parlé et votre progression dans les leçons. Vous pouvez les effacer en supprimant les données du site dans votre navigateur.',
+        ],
+      },
+      {
+        title: 'Hébergement',
+        paragraphs: [
+          'Le site et les labs sont hébergés par Vercel. Comme tout hébergeur, Vercel reçoit des informations techniques pour servir les pages, dont votre adresse IP : voir ses [règles de confidentialité](https://vercel.com/legal/privacy-policy).',
+        ],
+      },
+      {
+        title: 'Polices de caractères',
+        paragraphs: [
+          'Ce site héberge lui-même ses polices. Les labs chargent les leurs depuis Google Fonts : votre navigateur contacte alors Google, qui reçoit votre adresse IP, selon ses [règles de confidentialité](https://policies.google.com/privacy).',
+        ],
+      },
+      {
+        title: 'Liens vers d’autres sites',
+        paragraphs: [
+          'Les liens vers YouTube, GitHub ou les sources des labs mènent à des sites qui ont leurs propres règles. Aucune vidéo n’est intégrée à ce site.',
+        ],
+      },
+      {
+        title: 'L’application Onigam Video et les services d’API YouTube',
+        paragraphs: [
+          'Onigam Video est un outil privé. Il sert uniquement à la personne qui tient ce site à envoyer ses propres films sur sa propre chaîne YouTube, Onigam Labs, par les services d’API YouTube. Il n’est pas ouvert au public et n’accède aux données d’aucun autre utilisateur ni d’aucun visiteur.',
+          'Il ne touche qu’à cette chaîne : envoyer une vidéo, poser ses titres, ses descriptions, sa miniature et ses sous-titres, et relire ce que YouTube a reçu. Les identifiants d’accès restent sur son ordinateur. Aucune de ces données n’est vendue, ni utilisée pour de la publicité, ni conservée sur un serveur.',
+          'Cet outil est lancé avec l’aide d’un assistant IA (Claude, d’Anthropic) : les informations de cette chaîne peuvent donc passer par cet assistant.',
+          'Cet usage est soumis aux [conditions d’utilisation de YouTube](https://www.youtube.com/t/terms) et aux [règles de confidentialité de Google](https://policies.google.com/privacy). L’accès se retire à tout moment dans les [paramètres de sécurité du compte Google](https://myaccount.google.com/permissions).',
+        ],
+      },
+      {
+        title: 'Contact',
+        paragraphs: [
+          'Pour toute question sur cette page, ouvrez un [ticket sur GitHub](https://github.com/Onigam/onigam-labs/issues). Si elle change, la date ci-dessus change aussi.',
+        ],
+      },
+    ],
   },
 };
 

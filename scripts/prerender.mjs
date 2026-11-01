@@ -1,5 +1,5 @@
 // After `vite build` (client) and `vite build --ssr` (this repo's entry-server), writes the real pages:
-// dist/index.html (French), dist/en/index.html (English), plus sitemap.xml and robots.txt.
+// dist/index.html (French), dist/en/index.html (English), their privacy pages, plus sitemap.xml and robots.txt.
 // The pages are complete HTML (no flash, no JavaScript needed to read them); main.ts only adds behaviour.
 import { createHash } from 'node:crypto';
 import fs from 'node:fs';
@@ -17,7 +17,7 @@ const entryFile = fs.readdirSync(ssrDir).find((f) => /^entry-server\.m?js$/.test
 if (!entryFile)
   throw new Error('.ssr/entry-server.js is missing: run `vite build --ssr src/entry-server.ts --outDir .ssr`');
 const ssr = await import(pathToFileURL(path.join(ssrDir, entryFile)).href);
-const { render, DICTS, PATHS, LABS } = ssr;
+const { render, renderPrivacy, DICTS, PATHS, PRIVACY_PATHS, LABS } = ssr;
 
 const template = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
@@ -114,19 +114,63 @@ function page(lang) {
   return html;
 }
 
+/** The privacy page: the site's styles and paper, the theme script alone, no behaviour of the home page. */
+function privacyHead(lang) {
+  const p = DICTS[lang].privacyPage;
+  const csp = [
+    `default-src 'self'`,
+    `script-src ${sha(THEME_SCRIPT)}`,
+    `style-src 'self' 'unsafe-inline'`,
+    `img-src 'self' data:`,
+    `font-src 'self'`,
+    `connect-src 'none'`,
+    `object-src 'none'`,
+    `base-uri 'self'`,
+    `form-action 'none'`,
+  ].join('; ');
+  return `<meta http-equiv="Content-Security-Policy" content="${esc(csp)}">
+    <title>${esc(p.title)} · Onigam Labs</title>
+    <meta name="description" content="${esc(p.description)}">
+    <meta name="color-scheme" content="light dark">
+    <link rel="canonical" href="${SITE_URL}${PRIVACY_PATHS[lang]}">
+    <link rel="alternate" hreflang="fr" href="${SITE_URL}${PRIVACY_PATHS.fr}">
+    <link rel="alternate" hreflang="en" href="${SITE_URL}${PRIVACY_PATHS.en}">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    ${preload}
+    <script>${THEME_SCRIPT}</script>`;
+}
+
+function privacyPage(lang) {
+  const html = template
+    .replace('<html lang="fr">', `<html lang="${lang}">`)
+    .replace('<!--head-->', privacyHead(lang))
+    .replace(/\s*<script type="module"[^>]*><\/script>/, '')
+    .replace('<div id="app"><!--app--></div>', `<div id="app">${renderPrivacy(lang, year)}</div>`);
+  if (html === template || /<script type="module"/.test(html))
+    throw new Error('the privacy page was not built from dist/index.html');
+  return html;
+}
+
 fs.mkdirSync(path.join(dist, 'en'), { recursive: true });
 fs.writeFileSync(path.join(dist, 'index.html'), page('fr'));
 fs.writeFileSync(path.join(dist, 'en/index.html'), page('en'));
+for (const lang of ['fr', 'en']) {
+  const file = path.join(dist, PRIVACY_PATHS[lang], 'index.html');
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, privacyPage(lang));
+}
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${['fr', 'en']
-  .map(
-    (l) => `  <url>
-    <loc>${SITE_URL}${PATHS[l]}</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="${SITE_URL}${PATHS.fr}"/>
-    <xhtml:link rel="alternate" hreflang="en" href="${SITE_URL}${PATHS.en}"/>
+${[PATHS, PRIVACY_PATHS]
+  .flatMap((paths) =>
+    ['fr', 'en'].map(
+      (l) => `  <url>
+    <loc>${SITE_URL}${paths[l]}</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="${SITE_URL}${paths.fr}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${SITE_URL}${paths.en}"/>
   </url>`,
+    ),
   )
   .join('\n')}
 </urlset>

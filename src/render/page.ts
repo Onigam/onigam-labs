@@ -1,6 +1,6 @@
 import { LABS } from '../data/labs';
 import { DOMAINS, THUMB_WIDTHS, type Domain, type LabEntry, type Lang, type Status } from '../data/schema';
-import { DICTS, PATHS, type Dict } from '../i18n';
+import { DICTS, PATHS, PRIVACY_PATHS, type Dict } from '../i18n';
 import { esc } from './html';
 import { clock } from './format';
 import { ICONS, markSvg } from './icons';
@@ -230,11 +230,12 @@ function aboutSection(lang: Lang, t: Dict): string {
 </section>`;
 }
 
-function footer(t: Dict, year: number): string {
+function footer(lang: Lang, t: Dict, year: number): string {
   return `<footer class="site-footer">
   <div class="wrap foot">
     <div class="foot__legal"><span>© ${year} Magino</span><span>${esc(t.footer.licence)}</span><span>${esc(t.footer.privacy)}</span></div>
     <div class="foot__links">
+      <a href="${PRIVACY_PATHS[lang]}">${esc(t.footer.privacyLink)}</a>
       <a href="${SITE.repo}">${esc(t.hero.secondary)}</a>
       <a href="#top">${esc(t.a11y.backToTop)}</a>
     </div>
@@ -254,5 +255,5 @@ ${labsSection(lang, t)}
 ${insideSection(t)}
 ${aboutSection(lang, t)}
 </main>
-${footer(t, year)}`;
+${footer(lang, t, year)}`;
 }

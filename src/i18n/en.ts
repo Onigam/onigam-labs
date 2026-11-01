@@ -152,5 +152,60 @@ export const en: Dict = {
   footer: {
     licence: 'MIT licence',
     privacy: 'No cookies, no analytics.',
+    privacyLink: 'Privacy',
+  },
+  privacyPage: {
+    title: 'Privacy',
+    description:
+      'What the site, the labs and the film upload tool do with your data: next to nothing, and here is the detail.',
+    updated: 'Updated on 1 November 2026.',
+    back: 'Back to the labs',
+    sections: [
+      {
+        title: 'The short version',
+        paragraphs: [
+          'Neither this site nor the labs ask for an account or an email address. They set no cookies and use no analytics or advertising tool.',
+        ],
+      },
+      {
+        title: 'What stays in your browser',
+        paragraphs: [
+          'Your preferences are kept in your browser and sent nowhere: the language, the theme, the spoken guide’s settings and your progress through the lessons. You can erase them by deleting the site’s data in your browser.',
+        ],
+      },
+      {
+        title: 'Hosting',
+        paragraphs: [
+          'The site and the labs are hosted by Vercel. Like any host, Vercel receives technical information to serve the pages, including your IP address: see its [privacy policy](https://vercel.com/legal/privacy-policy).',
+        ],
+      },
+      {
+        title: 'Fonts',
+        paragraphs: [
+          'This site hosts its own fonts. The labs load theirs from Google Fonts: your browser then contacts Google, which receives your IP address, under its [privacy policy](https://policies.google.com/privacy).',
+        ],
+      },
+      {
+        title: 'Links to other sites',
+        paragraphs: [
+          'Links to YouTube, GitHub or the labs’ sources lead to sites with their own rules. No video is embedded on this site.',
+        ],
+      },
+      {
+        title: 'The Onigam Video application and YouTube API Services',
+        paragraphs: [
+          'Onigam Video is a private tool. Its only use is for the person who runs this site to upload their own films to their own YouTube channel, Onigam Labs, through YouTube API Services. It is not open to the public and accesses no data of any other user or of any visitor.',
+          'It only touches that channel: uploading a video, setting its titles, descriptions, thumbnail and captions, and reading back what YouTube received. The access credentials stay on that person’s computer. None of this data is sold, used for advertising or kept on a server.',
+          'This tool is run with the help of an AI assistant (Claude, by Anthropic), so information from that channel may pass through the assistant.',
+          'This use is subject to the [YouTube Terms of Service](https://www.youtube.com/t/terms) and the [Google Privacy Policy](https://policies.google.com/privacy). Access can be withdrawn at any time in the [Google account’s security settings](https://myaccount.google.com/permissions).',
+        ],
+      },
+      {
+        title: 'Contact',
+        paragraphs: [
+          'For any question about this page, open an [issue on GitHub](https://github.com/Onigam/onigam-labs/issues). If it changes, the date above changes too.',
+        ],
+      },
+    ],
   },
 };

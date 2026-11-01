@@ -1,0 +1,24 @@
+/* The privacy page: a single column of text, on the site's own tokens. */
+.privacy {
+  max-width: 72ch;
+  padding-block: 48px 72px;
+}
+.privacy h1 {
+  margin: 0 0 8px;
+}
+.privacy h2 {
+  margin: 36px 0 8px;
+  font-size: 1.2rem;
+}
+.privacy p {
+  margin: 0 0 12px;
+  color: var(--ink-2);
+  line-height: 1.6;
+}
+.privacy a {
+  overflow-wrap: anywhere;
+}
+.privacy__updated {
+  font-size: 0.9rem;
+  color: var(--ink-3);
+}

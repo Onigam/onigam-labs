@@ -5,6 +5,7 @@ import { LABS } from './data/labs';
 import { DOMAINS, validateLab, type LabEntry } from './data/schema';
 import { DICTS } from './i18n';
 import { renderPage } from './render/page';
+import { inline, renderPrivacy } from './render/privacy';
 
 const dir = path.join(import.meta.dirname, 'data/labs');
 const files = fs.readdirSync(dir).filter((f) => f.endsWith('.json'));
@@ -86,5 +87,37 @@ describe('the page', () => {
       expect(html).toContain('hreflang="fr"');
       expect(html).toContain('hreflang="en"');
     }
+  });
+});
+
+describe('the privacy page', () => {
+  it('exists in both languages, with the same sections and working links', () => {
+    expect(DICTS.fr.privacyPage.sections.length).toBe(DICTS.en.privacyPage.sections.length);
+    for (const lang of ['fr', 'en'] as const) {
+      const html = renderPrivacy(lang, 2026);
+      expect(html).toContain('Onigam Video');
+      expect(html).toContain('href="https://www.youtube.com/t/terms"');
+      expect(html).toContain('href="https://policies.google.com/privacy"');
+      expect(html).toContain('href="https://myaccount.google.com/permissions"');
+      expect(html).not.toContain('](');
+      expect(html).not.toContain('<script');
+      expect(html).not.toMatch(/@gmail|cochet/i);
+    }
+  });
+
+  it('says that the labs load their fonts from Google, as they do', () => {
+    expect(renderPrivacy('fr', 2026)).toContain('Google Fonts');
+    expect(renderPrivacy('en', 2026)).toContain('Google Fonts');
+  });
+
+  it('is linked from the footer of the home page, in its language', () => {
+    expect(renderPage('fr', 2026)).toContain('href="/privacy/"');
+    expect(renderPage('en', 2026)).toContain('href="/en/privacy/"');
+  });
+
+  it('writes links in https only, and escapes the rest', () => {
+    expect(inline('a [b](https://x.io/y) <c>')).toBe('a <a href="https://x.io/y" rel="noopener">b</a> &lt;c&gt;');
+    expect(inline('[b](http://x.io)')).toBe('[b](http://x.io)');
+    expect(inline('[b](javascript:alert(1))')).not.toContain('<a');
   });
 });
