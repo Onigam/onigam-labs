@@ -1,7 +1,7 @@
 {
   "slug": "solar-heater-lab",
   "order": 1,
-  "status": "planned",
+  "status": "building",
   "title": { "fr": "Chauffe-eau solaire", "en": "Solar water heater" },
   "tagline": {
     "fr": "Un capteur, un ballon et l’eau chaude qui monte toute seule",
@@ -9,7 +9,10 @@
   },
   "domains": ["heat", "water"],
   "tags": ["solar", "off-grid"],
+  "difficulty": 2,
+  "minutes": 25,
   "languages": ["fr", "en"],
   "spokenGuide": [],
+  "repoUrl": "https://github.com/Onigam/solar-heater-lab",
   "sources": []
 }

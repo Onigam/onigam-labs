@@ -1,12 +1,15 @@
 {
   "slug": "sand-battery-lab",
   "order": 5,
-  "status": "planned",
+  "status": "building",
   "title": { "fr": "Batterie de sable", "en": "Sand battery" },
-  "tagline": { "fr": "Stocker la chaleur dans du sable", "en": "Storing heat in sand" },
+  "tagline": { "fr": "Le plus grand silo ne contient pas de sable : de la pierre, chauffée au courant bon marché", "en": "The largest silo holds no sand: stone, heated by cheap current" },
   "domains": ["storage", "heat"],
   "tags": ["off-grid"],
+  "difficulty": 2,
+  "minutes": 25,
   "languages": ["fr", "en"],
   "spokenGuide": [],
+  "repoUrl": "https://github.com/Onigam/sand-battery-lab",
   "sources": []
 }

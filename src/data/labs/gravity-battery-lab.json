@@ -1,12 +1,15 @@
 {
   "slug": "gravity-battery-lab",
   "order": 4,
-  "status": "planned",
+  "status": "building",
   "title": { "fr": "Batterie à gravité", "en": "Gravity battery" },
   "tagline": { "fr": "Stocker l’énergie en soulevant un poids", "en": "Storing energy by lifting a weight" },
   "domains": ["storage", "electricity"],
   "tags": ["off-grid"],
+  "difficulty": 2,
+  "minutes": 25,
   "languages": ["fr", "en"],
   "spokenGuide": [],
+  "repoUrl": "https://github.com/Onigam/gravity-battery-lab",
   "sources": []
 }
