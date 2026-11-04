@@ -227,20 +227,3 @@ html[data-tour] body {
     padding-bottom: 240px;
   }
 }
-
-.is-tour {
-  outline: 3px solid var(--accent);
-  outline-offset: 8px;
-  border-radius: var(--radius);
-  animation: tour-ring 1.6s ease-out 1;
-}
-.soon.is-tour,
-.soon__item.is-tour {
-  border-radius: 6px;
-}
-@keyframes tour-ring {
-  from {
-    outline-offset: 22px;
-    outline-color: transparent;
-  }
-}

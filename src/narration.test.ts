@@ -25,14 +25,12 @@ describe('the spoken tour scripts', () => {
     expect(cues(scripts.en)).toEqual(cues(scripts.fr));
   });
   it('only use cues the page understands, on things that exist', () => {
-    const slugs = new Set(LABS.map((l) => l.slug));
     for (const cue of cues(scripts.fr)) {
       const [kind, name, arg] = cue.split(':');
       expect(kind).toBe('lab');
       if (name === 'top') continue;
       if (name === 'step') expect(['1', '2', '3']).toContain(arg);
       else if (name === 'section') expect(['labs', 'planned', 'inside', 'about']).toContain(arg);
-      else if (name === 'card') expect(slugs.has(arg), `no lab ${arg}`).toBe(true);
       else throw new Error(`unknown cue ${cue}`);
     }
   });
@@ -54,8 +52,12 @@ describe('the spoken tour scripts', () => {
       } else spokenSoFar += part.replace(/\s+/g, ' ').length;
     }
   });
-  it('speak of the same labs the site shows', () => {
-    const slugs = cues(scripts.fr).filter((c) => c.startsWith('lab:card:'));
-    expect(slugs.length).toBeGreaterThan(0);
+  it.each(['fr', 'en'] as const)('(%s) name no lab, so adding one never needs new audio', (lang) => {
+    const s = spoken(scripts[lang]);
+    for (const lab of LABS) expect(s).not.toContain(lab.title[lang]);
+    expect(cues(scripts[lang]).filter((c) => c.startsWith('lab:card'))).toEqual([]);
+  });
+  it.each(['fr', 'en'] as const)('(%s) stay short', (lang) => {
+    expect(spoken(scripts[lang]).length).toBeLessThan(1400);
   });
 });

@@ -1,5 +1,5 @@
 // The spoken guided tour: a transport bar, subtitles, and a page that follows the voice. The audio is pre-rendered
-// (tools/narration/generate.mjs, same voice as the labs), so nothing runs on a server and nothing starts by itself.
+// (tools/narration/generate.mjs, the local voice), so nothing runs on a server and nothing starts by itself.
 import type { Lang } from '../data/schema';
 import { DICTS } from '../i18n';
 import { ICONS } from '../render/icons';
@@ -35,7 +35,7 @@ const safe = <T>(fn: () => T, fallback: T): T => {
 
 /**
  * The cues of the tour move the page, they never block it:
- *   top · step:N · section:labs|planned|inside|about · card:<lab slug>
+ *   top · step:N · section:labs|planned|inside|about
  */
 export function initTour(root: HTMLElement, lang: Lang, story: Story | null): void {
   const starters = [...root.querySelectorAll<HTMLElement>('[data-tour-start]')];
@@ -72,12 +72,10 @@ export function initTour(root: HTMLElement, lang: Lang, story: Story | null): vo
   };
 
   // ---- the page follows the voice
-  const clearHighlight = (): void => root.querySelectorAll('.is-tour').forEach((n) => n.classList.remove('is-tour'));
   const scrollTo = (target: Element | null, block: ScrollLogicalPosition): void =>
     target?.scrollIntoView({ block, behavior: reduce.matches ? 'auto' : 'smooth' });
   const apply = (cue: Cue['do']): void => {
     if (!guided) return;
-    clearHighlight();
     const arg = cue.arg ?? '';
     switch (cue.lab) {
       case 'top':
@@ -89,18 +87,6 @@ export function initTour(root: HTMLElement, lang: Lang, story: Story | null): vo
       case 'section':
         scrollTo(root.querySelector(arg === 'planned' ? '[data-group="planned"]' : `#${arg}`), 'start');
         break;
-      case 'card': {
-        const card = root.querySelector<HTMLElement>(`[data-lab="${arg}"]`);
-        if (card?.hidden) root.querySelector<HTMLElement>('[data-filter="all"]')?.click();
-        if (!card) break;
-        card.classList.add('is-tour');
-        // centre the card in what the header and the bar leave free; a card taller than that starts under the header
-        const header = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 64;
-        const free = innerHeight - header - (bar?.offsetHeight ?? 0) - 24;
-        const top = card.getBoundingClientRect().top + scrollY - header - Math.max(16, (free - card.offsetHeight) / 2);
-        window.scrollTo({ top, behavior: reduce.matches ? 'auto' : 'smooth' });
-        break;
-      }
     }
   };
   /** After a seek: put the page in the state of the last cue before `time`. */
@@ -140,7 +126,6 @@ export function initTour(root: HTMLElement, lang: Lang, story: Story | null): vo
     el.guide.setAttribute('aria-pressed', String(on));
     bar?.toggleAttribute('data-detached', !on);
     if (on && audio) replay(audio.currentTime);
-    if (!on) clearHighlight();
   };
 
   const close = (): void => {
@@ -150,7 +135,6 @@ export function initTour(root: HTMLElement, lang: Lang, story: Story | null): vo
     frame = 0;
     bar?.remove();
     bar = null;
-    clearHighlight();
     document.documentElement.removeAttribute('data-tour');
     document.documentElement.removeAttribute('data-tour-playing');
     removeEventListener('keydown', onKey);

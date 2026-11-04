@@ -1,9 +1,8 @@
-// Makes (or remakes) the audio of the guided tour with the same ElevenLabs voice as the labs.
-//   npm run narration -- --dry-run        what it would cost, calls nothing (0 credit)
-//   npm run narration                     generates both languages (spends credits: the owner says yes first)
+// Makes (or remakes) the audio of the guided tour with the local voice: Qwen3-TTS through Voicebox, no credit.
+//   npm run narration -- --dry-run        what it would make, calls nothing
+//   npm run narration                     generates both languages (Voicebox open, profiles Onigam narrateur FR and EN)
 //   npm run narration -- --lang fr        one language only
-// A segment is only generated again when its text, the voice or the settings changed: a hash cache never bills the same
-// text twice. The key lives in ~/.config/lab-narration/elevenlabs.env, never in this repository.
+// A segment is only generated again when its text or the voice changed. VOICEBOX_SEED gives another take of a bad clip.
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -17,7 +16,16 @@ for (const lang of only) {
   console.log(`\n== ${lang}`);
   const r = spawnSync(
     process.execPath,
-    ['tools/narration/generate.mjs', '--src', `narration/${lang}.json`, '--out', `public/audio/${lang}`, ...pass],
+    [
+      'tools/narration/generate.mjs',
+      '--src',
+      `narration/${lang}.json`,
+      '--out',
+      `public/audio/${lang}`,
+      '--engine',
+      'voicebox',
+      ...pass,
+    ],
     { cwd: ROOT, stdio: 'inherit' },
   );
   status ||= r.status ?? 1;

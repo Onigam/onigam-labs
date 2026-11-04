@@ -9,7 +9,6 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const problems = [];
-const slugs = new Set(fs.readdirSync(path.join(ROOT, 'src/data/labs')).map((f) => f.replace(/\.json$/, '')));
 const SECTIONS = new Set(['labs', 'planned', 'inside', 'about']);
 
 /** The text that is spoken: the script without its [[cue]] markers. */
@@ -24,8 +23,7 @@ function checkCue(lang, cue) {
   const ok =
     (lab === 'top' && !arg) ||
     (lab === 'step' && ['1', '2', '3'].includes(arg)) ||
-    (lab === 'section' && SECTIONS.has(arg)) ||
-    (lab === 'card' && slugs.has(arg));
+    (lab === 'section' && SECTIONS.has(arg));
   if (!ok) problems.push(`${lang}: unknown cue ${JSON.stringify(cue.do)}`);
 }
 
@@ -46,7 +44,8 @@ for (const file of fs.readdirSync(path.join(ROOT, 'narration')).filter((f) => f.
   }
   const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
   if (manifest.lang !== lang) problems.push(`${lang}: the manifest is for "${manifest.lang}"`);
-  if (!/^eleven_/.test(manifest.model ?? '')) problems.push(`${lang}: the manifest was not made by generate.mjs`);
+  if (!/^qwen3-tts-/.test(manifest.model ?? ''))
+    problems.push(`${lang}: the manifest was not made with the local voice (npm run narration)`);
   const ids = new Set();
   for (const seg of manifest.segments) {
     ids.add(seg.id);
