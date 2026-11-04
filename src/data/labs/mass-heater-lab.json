@@ -4,15 +4,15 @@
   "status": "building",
   "title": { "fr": "Poêle de masse", "en": "Rocket mass heater" },
   "tagline": {
-    "fr": "Brûler peu, chauffer longtemps : la chaleur gardée dans la masse",
-    "en": "Burn little, heat for hours: warmth kept in the mass"
+    "fr": "Comment deux feux par jour peuvent-ils chauffer une maison ? Surtout par la maison",
+    "en": "How can two fires a day heat a house? Mostly by the house"
   },
   "domains": ["heat", "storage"],
   "tags": ["wood", "off-grid"],
   "difficulty": 2,
   "minutes": 30,
   "languages": ["fr", "en"],
-  "spokenGuide": [],
+  "spokenGuide": ["fr", "en"],
   "repoUrl": "https://github.com/Onigam/mass-heater-lab",
   "sources": []
 }

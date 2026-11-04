@@ -1,12 +1,18 @@
 {
   "slug": "biodigester-lab",
-  "order": 6,
-  "status": "planned",
+  "order": 3,
+  "status": "building",
   "title": { "fr": "Biodigesteur", "en": "Biodigester" },
-  "tagline": { "fr": "Du gaz de cuisson à partir de déchets organiques", "en": "Cooking gas from organic waste" },
+  "tagline": {
+    "fr": "Des restes de cuisine à la flamme, en 3D : la cloche, la vie dans la cuve, le gaz et ses limites",
+    "en": "From kitchen scraps to a flame, in 3D: the bell, the life in the tank, the gas and its limits"
+  },
   "domains": ["heat"],
-  "tags": ["biogas", "off-grid"],
+  "tags": ["biogas", "waste", "cooking", "biology"],
+  "difficulty": 3,
+  "minutes": 35,
   "languages": ["fr", "en"],
-  "spokenGuide": [],
+  "spokenGuide": ["fr", "en"],
+  "repoUrl": "https://github.com/Onigam/biodigester-lab",
   "sources": []
 }

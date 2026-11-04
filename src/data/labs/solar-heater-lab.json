@@ -12,7 +12,7 @@
   "difficulty": 2,
   "minutes": 25,
   "languages": ["fr", "en"],
-  "spokenGuide": [],
+  "spokenGuide": ["fr", "en"],
   "repoUrl": "https://github.com/Onigam/solar-heater-lab",
   "sources": []
 }
