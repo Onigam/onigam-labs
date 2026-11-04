@@ -6,7 +6,7 @@ export const en: Dict = {
   meta: {
     title: 'Onigam Labs: 3D labs to understand energy',
     description:
-      'Interactive 3D labs, free and bilingual, to understand how water, wind and heat drive machines that need no fuel.',
+      'Interactive 3D labs, free and bilingual, to understand how machines draw energy from water, wind, sun or wood, and keep it.',
   },
   a11y: {
     skip: 'Skip to content',
@@ -22,7 +22,7 @@ export const en: Dict = {
   },
   nav: { labs: 'The labs', inside: 'Inside every lab', about: 'About' },
   hero: {
-    title: 'Fuel-free machines you can take apart, piece by piece.',
+    title: 'Machines you can take apart, piece by piece, to understand energy.',
     lead: 'Onigam Labs gathers interactive 3D labs: explore a turbine, a hydraulic ram or a wind turbine, take it apart, run it in a simulation. Free, in French and English, with a spoken guide.',
     primary: 'Browse the labs',
     secondary: 'Source code on GitHub',
@@ -113,6 +113,8 @@ export const en: Dict = {
     waste: 'Waste',
     cooking: 'Cooking',
     biology: 'Biology',
+    thermosiphon: 'Thermosiphon',
+    fire: 'Fire',
   },
   inside: {
     title: 'Inside every lab',

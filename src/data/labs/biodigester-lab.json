@@ -1,7 +1,7 @@
 {
   "slug": "biodigester-lab",
-  "order": 3,
-  "status": "building",
+  "order": 9,
+  "status": "live",
   "title": { "fr": "Biodigesteur", "en": "Biodigester" },
   "tagline": {
     "fr": "Des restes de cuisine à la flamme, en 3D : la cloche, la vie dans la cuve, le gaz et ses limites",
@@ -13,6 +13,40 @@
   "minutes": 35,
   "languages": ["fr", "en"],
   "spokenGuide": ["fr", "en"],
+  "liveUrl": "https://biodigester-lab.onigam.io",
+  "thumbnail": "biodigester-lab",
   "repoUrl": "https://github.com/Onigam/biodigester-lab",
-  "sources": []
+  "capture": { "scene": "digester" },
+  "sources": [
+    {
+      "title": "How to produce biogas at home? - DIY Tutorial",
+      "author": "Low-tech Lab",
+      "url": "https://www.youtube.com/watch?v=mF7XEyyVhuQ",
+      "year": 2022
+    },
+    {
+      "title": "Research on anaerobic digestion of organic solid waste at household level in Dar es Salaam",
+      "author": "C. Lohri",
+      "url": "https://www.eawag.ch/fileadmin/Domain1/Abteilungen/sandec/publikationen/SWM/Anaerobic_Digestion/Lohri_2009.pdf",
+      "year": 2009
+    },
+    {
+      "title": "Renewable Energy from Kitchen Waste",
+      "author": "Y. Vögeli, C. Lohri, Sandec News 10",
+      "url": "https://www.eawag.ch/fileadmin/Domain1/Abteilungen/sandec/publikationen/SWM/Anaerobic_Digestion/SN10_Kitchen_Waste.pdf",
+      "year": 2009
+    },
+    {
+      "title": "Anaerobic digestion of canteen waste at a secondary school in Dar es Salaam",
+      "author": "T. Gyalpo",
+      "url": "https://www.eawag.ch/fileadmin/Domain1/Abteilungen/sandec/publikationen/SWM/Anaerobic_Digestion/Gyalpo_2010.pdf",
+      "year": 2010
+    },
+    {
+      "title": "Anaerobic Digestion of Biowaste in Developing Countries",
+      "author": "Y. Vögeli et al., Eawag",
+      "url": "https://www.eawag.ch/fileadmin/Domain1/Abteilungen/sandec/publikationen/SWM/Anaerobic_Digestion/biowaste.pdf",
+      "year": 2014
+    }
+  ]
 }

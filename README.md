@@ -1,6 +1,6 @@
 # Onigam Labs
 
-The showcase of the **Onigam labs**: interactive 3D labs that explain how water, wind and heat drive machines that need no fuel.
+The showcase of the **Onigam labs**: interactive 3D labs that explain how machines draw energy from water, wind, sun or wood, and keep it.
 Each lab is an independent site (a Pelton turbine, a hydraulic ram, a wind turbine…); this site is their front door, in
 French and English.
 
@@ -106,22 +106,22 @@ template's cannot be added as `live`.
 
 ## Spoken guided tour
 
-A voice walks the visitor through the site: the hero, each lab, "Inside every lab", About. It is the **same synthetic voice as the
-labs** (ElevenLabs, always labelled _synthetic voice_). The page follows the voice (it scrolls, a ring marks the lab being
-described, the hero runner comes apart on cue), with subtitles, a seek bar, a speed switch and a **Guidance** switch that lets go as
-soon as the visitor scrolls by hand. Nothing starts by itself.
+A voice walks the visitor through the site in about a minute: the hero, how to use the gallery, "Inside every lab", About. **It names
+no lab**, so adding a lab never needs new audio: the cards speak for the labs (a test holds this). It is the **local synthetic voice**
+of the newer labs (Qwen3-TTS through Voicebox, always labelled _synthetic voice_). The page follows the voice (it scrolls, the hero
+runner comes apart on cue), with subtitles, a seek bar, a speed switch and a **Guidance** switch that lets go as soon as the visitor
+scrolls by hand. Nothing starts by itself.
 
 - **Scripts**: `narration/fr.json` and `narration/en.json` (one segment each, in the tone of Pelton Lab's guide: `node
 tools/narration/tone-stats.mjs narration/fr.json` compares). Cues move the page: `[[lab:top]]`, `[[lab:step:2]]`,
-  `[[lab:section:labs]]` (`labs`, `planned`, `inside`, `about`), `[[lab:card:<slug>]]`. A test checks that both languages say the
-  same things in the same order and that every cue points at something that exists.
-- **Audio**: `npm run narration -- --dry-run` prints the cost and calls nothing (0 credit); `npm run narration` generates it
-  (about one credit per character: **ask the owner first**). The key lives in `~/.config/lab-narration/elevenlabs.env`, never in the
-  repository. Files go to `public/audio/<lang>/`. A hash cache means unchanged text is never billed twice.
+  `[[lab:section:labs]]` (`labs`, `planned`, `inside`, `about`). A test checks that both languages say the same things in the same
+  order and that every cue points at something that exists.
+- **Audio**: `npm run narration -- --dry-run` prints what it would make; `npm run narration` generates it with Voicebox open, profiles
+  `Onigam narrateur FR` and `EN`, no credit (`VOICEBOX_SEED` gives another take of a bad clip). Files go to `public/audio/<lang>/`. A
+  hash cache means unchanged text is never made twice.
 - **Until the audio exists, the tour button is not drawn.** `npm run build` checks the manifest against the script and the cues
-  against the labs, and requires both languages together.
-- **When you add a lab**, add a sentence with its `[[lab:card:<slug>]]` cue to both scripts, then run `npm run narration`: only the
-  changed text is billed.
+  against the page, and requires both languages together.
+- **When you add a lab**, there is nothing to do here.
 
 ## Domain and address
 
@@ -144,8 +144,8 @@ By Magino · MIT licence. Fonts: [Space Grotesk](https://github.com/floriankarst
 
 # Français
 
-La vitrine des **labs Onigam** : des laboratoires 3D interactifs qui expliquent comment l’eau, le vent et la chaleur font tourner
-des machines sans carburant. Chaque lab est un site indépendant (turbine Pelton, bélier hydraulique, éolienne…) ; ce site en est la
+La vitrine des **labs Onigam** : des laboratoires 3D interactifs qui expliquent comment des machines tirent de l’énergie de l’eau, du vent,
+du soleil ou du bois, et la gardent. Chaque lab est un site indépendant (turbine Pelton, bélier hydraulique, éolienne…) ; ce site en est la
 porte d’entrée, en français et en anglais.
 
 **▶ https://labs.onigam.io** · français sur `/`, anglais sur `/en/` · clair et sombre · ordinateur, tablette et téléphone
@@ -225,22 +225,22 @@ Autres cas :
 
 ## Visite guidée vocale
 
-Une voix accompagne le visiteur sur le site : l’accueil, chaque lab, « Dans chaque lab », À propos. C’est la **même voix de synthèse
-que dans les labs** (ElevenLabs, toujours signalée _voix de synthèse_). La page suit la voix (elle défile, un cadre marque le lab dont
-on parle, la roue de l’accueil se démonte au bon moment), avec sous-titres, barre de position, vitesse et un interrupteur
+Une voix accompagne le visiteur sur le site en une minute environ : l’accueil, l’usage de la galerie, « Dans chaque lab », À propos.
+**Elle ne nomme aucun lab** : ajouter un lab ne demande jamais de nouvel audio, les cartes parlent pour les labs (un test y veille).
+C’est la **voix de synthèse locale** des labs récents (Qwen3-TTS par Voicebox, toujours signalée _voix de synthèse_). La page suit la
+voix (elle défile, la roue de l’accueil se démonte au bon moment), avec sous-titres, barre de position, vitesse et un interrupteur
 **Guidage** qui lâche la main dès que le visiteur défile lui-même. Rien ne démarre tout seul.
 
 - **Scripts** : `narration/fr.json` et `narration/en.json` (un segment chacun, dans le ton du guide de Pelton Lab : `node
 tools/narration/tone-stats.mjs narration/fr.json` compare). Les repères déplacent la page : `[[lab:top]]`, `[[lab:step:2]]`,
-  `[[lab:section:labs]]` (`labs`, `planned`, `inside`, `about`), `[[lab:card:<slug>]]`. Un test vérifie que les deux langues disent la
-  même chose dans le même ordre et que chaque repère vise quelque chose qui existe.
-- **Audio** : `npm run narration -- --dry-run` donne le coût sans rien appeler (0 crédit) ; `npm run narration` le génère (environ un
-  crédit par caractère : **demander d’abord au propriétaire**). La clé est dans `~/.config/lab-narration/elevenlabs.env`, jamais dans le
-  dépôt. Les fichiers vont dans `public/audio/<langue>/`. Un cache par empreinte ne refacture jamais un texte inchangé.
+  `[[lab:section:labs]]` (`labs`, `planned`, `inside`, `about`). Un test vérifie que les deux langues disent la même chose dans le même
+  ordre et que chaque repère vise quelque chose qui existe.
+- **Audio** : `npm run narration -- --dry-run` dit ce qui serait fait ; `npm run narration` le génère, Voicebox ouvert, profils
+  `Onigam narrateur FR` et `EN`, sans crédit (`VOICEBOX_SEED` donne une autre prise d’un extrait raté). Les fichiers vont dans
+  `public/audio/<langue>/`. Un cache par empreinte ne refait jamais un texte inchangé.
 - **Tant que l’audio n’existe pas, le bouton de visite n’est pas dessiné.** `npm run build` vérifie le manifeste contre le script et
-  les repères contre les labs, et exige les deux langues ensemble.
-- **Quand on ajoute un lab**, ajouter une phrase avec son repère `[[lab:card:<slug>]]` aux deux scripts, puis `npm run narration` :
-  seul le texte modifié est facturé.
+  les repères contre la page, et exige les deux langues ensemble.
+- **Quand on ajoute un lab**, il n’y a rien à faire ici.
 
 ## Domaine et adresse
 

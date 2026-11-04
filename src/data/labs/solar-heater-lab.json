@@ -1,18 +1,40 @@
 {
   "slug": "solar-heater-lab",
-  "order": 1,
-  "status": "building",
-  "title": { "fr": "Chauffe-eau solaire", "en": "Solar water heater" },
+  "order": 7,
+  "status": "live",
+  "title": { "fr": "Chauffe-eau solaire", "en": "Solar Water Heater" },
   "tagline": {
-    "fr": "Un capteur, un ballon et l’eau chaude qui monte toute seule",
-    "en": "A collector, a tank and hot water that rises on its own"
+    "fr": "Sans pompe, en 3D : le capteur, le ballon, la nuit, la douche",
+    "en": "With no pump, in 3D: the collector, the tank, the night, the shower"
   },
   "domains": ["heat", "water"],
-  "tags": ["solar", "off-grid"],
+  "tags": ["solar", "thermosiphon"],
   "difficulty": 2,
   "minutes": 25,
   "languages": ["fr", "en"],
   "spokenGuide": ["fr", "en"],
+  "liveUrl": "https://solar-heater-lab.onigam.io",
+  "thumbnail": "solar-heater-lab",
   "repoUrl": "https://github.com/Onigam/solar-heater-lab",
-  "sources": []
+  "capture": { "scene": "rig" },
+  "sources": [
+    {
+      "title": "Introduction to thermosiphon solar thermal systems",
+      "author": "SOLTRAIN",
+      "url": "https://www.youtube.com/watch?v=U-J3psr4tcI",
+      "year": 2021
+    },
+    {
+      "title": "On the Night Heat Losses in Thermosyphon Solar Water Heaters",
+      "author": "I. Michaelides et al.",
+      "url": "https://proceedings.ises.org/conference/eurosun2010/papers/eurosun2010-0312-Michaelides.pdf",
+      "year": 2010
+    },
+    {
+      "title": "Detailed Loop Model (DLM) analysis of liquid solar thermosiphons with heat exchangers",
+      "author": "A. Mertol, W. Place, T. Webster, R. Greif, Lawrence Berkeley Laboratory",
+      "url": "https://digital.library.unt.edu/ark:/67531/metadc829193/m2/1/high_res_d/1068188.pdf",
+      "year": 1981
+    }
+  ]
 }

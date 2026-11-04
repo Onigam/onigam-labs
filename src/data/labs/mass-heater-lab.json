@@ -1,18 +1,52 @@
 {
   "slug": "mass-heater-lab",
-  "order": 2,
-  "status": "building",
-  "title": { "fr": "Poêle de masse", "en": "Rocket mass heater" },
+  "order": 8,
+  "status": "live",
+  "title": { "fr": "Labo du poêle de masse", "en": "Mass Heater Lab" },
   "tagline": {
     "fr": "Comment deux feux par jour peuvent-ils chauffer une maison ? Surtout par la maison",
     "en": "How can two fires a day heat a house? Mostly by the house"
   },
   "domains": ["heat", "storage"],
-  "tags": ["wood", "off-grid"],
+  "tags": ["wood", "fire"],
   "difficulty": 2,
   "minutes": 30,
   "languages": ["fr", "en"],
   "spokenGuide": ["fr", "en"],
+  "liveUrl": "https://mass-heater-lab.onigam.io",
+  "thumbnail": "mass-heater-lab",
   "repoUrl": "https://github.com/Onigam/mass-heater-lab",
-  "sources": []
+  "capture": { "scene": "fire-core", "zoom": 1.2, "focus": [0.55, 0.43] },
+  "sources": [
+    {
+      "title": "wood burning stoves - super efficient rocket mass heater",
+      "author": "Paul Wheaton",
+      "url": "https://www.youtube.com/watch?v=4usXIAoy9us",
+      "year": 2012
+    },
+    {
+      "title": "La minute permaculture #18 : C’est quoi un rocket stove ?",
+      "author": "Permaculture Design",
+      "url": "https://www.youtube.com/watch?v=cikCD1BT2og",
+      "year": 2019
+    },
+    {
+      "title": "Poêle de masse accessible à tous",
+      "author": "Oxalis",
+      "url": "https://www.oxalis-asso.org/wp-content/uploads/SUPPORT-DE-FORMATION-Mars-2016.pdf",
+      "year": 2016
+    },
+    {
+      "title": "A computational model for a rocket mass heater",
+      "author": "M. Schumack",
+      "url": "https://doi.org/10.1016/j.applthermaleng.2015.10.035",
+      "year": 2016
+    },
+    {
+      "title": "WHO guidelines for indoor air quality: selected pollutants",
+      "author": "World Health Organization",
+      "url": "https://iris.who.int/handle/10665/260127",
+      "year": 2010
+    }
+  ]
 }

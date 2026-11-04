@@ -4,7 +4,7 @@ export const fr = {
   meta: {
     title: 'Onigam Labs, des labs 3D pour comprendre l’énergie',
     description:
-      'Des laboratoires 3D interactifs, gratuits et bilingues, pour comprendre comment l’eau, le vent et la chaleur font tourner des machines sans carburant.',
+      'Des laboratoires 3D interactifs, gratuits et bilingues, pour comprendre comment des machines tirent de l’énergie de l’eau, du vent, du soleil ou du bois, et la gardent.',
   },
   a11y: {
     skip: 'Aller au contenu',
@@ -20,7 +20,7 @@ export const fr = {
   },
   nav: { labs: 'Les labs', inside: 'Dans chaque lab', about: 'À propos' },
   hero: {
-    title: 'Des machines sans carburant, à démonter pièce par pièce.',
+    title: 'Des machines à démonter pièce par pièce, pour comprendre l’énergie.',
     lead: 'Onigam Labs réunit des laboratoires 3D interactifs : on explore une turbine, un bélier hydraulique ou une éolienne, on la démonte, on la fait tourner dans une simulation. Gratuit, en français et en anglais, avec un guide parlé.',
     primary: 'Voir les labs',
     secondary: 'Code source sur GitHub',
@@ -111,6 +111,8 @@ export const fr = {
     waste: 'Déchets',
     cooking: 'Cuisson',
     biology: 'Biologie',
+    thermosiphon: 'Thermosiphon',
+    fire: 'Feu',
   } as Record<string, string>,
   inside: {
     title: 'Dans chaque lab',
