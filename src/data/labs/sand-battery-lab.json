@@ -1,15 +1,57 @@
 {
   "slug": "sand-battery-lab",
-  "order": 5,
-  "status": "building",
-  "title": { "fr": "Batterie de sable", "en": "Sand battery" },
-  "tagline": { "fr": "Le plus grand silo ne contient pas de sable : de la pierre, chauffée au courant bon marché", "en": "The largest silo holds no sand: stone, heated by cheap current" },
+  "order": 6,
+  "status": "live",
+  "title": { "fr": "Labo de la batterie de sable", "en": "Sand Battery Lab" },
+  "tagline": {
+    "fr": "Le plus grand silo ne contient pas de sable : de la pierre, chauffée au courant bon marché, qui rend de la chaleur",
+    "en": "The largest silo holds no sand: stone, heated by cheap current, that gives back heat"
+  },
   "domains": ["storage", "heat"],
-  "tags": ["off-grid"],
+  "tags": ["grid"],
   "difficulty": 2,
   "minutes": 25,
   "languages": ["fr", "en"],
-  "spokenGuide": [],
+  "spokenGuide": ["fr", "en"],
+  "liveUrl": "https://sand-battery-lab.onigam.io",
+  "thumbnail": "sand-battery-lab",
   "repoUrl": "https://github.com/Onigam/sand-battery-lab",
-  "sources": []
+  "capture": { "scene": "silo", "zoom": 1.3, "focus": [0.49, 0.52] },
+  "sources": [
+    {
+      "title": "What Is a Sand Battery? Polar Night Energy’s Sand-based Thermal Energy Storage Explained",
+      "author": "Polar Night Energy",
+      "url": "https://www.youtube.com/watch?v=bZ9TyJ1bQ3Y",
+      "year": 2023
+    },
+    {
+      "title": "Solution for clean energy’s big problem",
+      "author": "Polar Night Energy",
+      "url": "https://polarnightenergy.com/reference/solution-for-clean-energys-big-problem/"
+    },
+    {
+      "title": "Sand Battery’s Efficiency Explained",
+      "author": "Ville Kivioja, Polar Night Energy",
+      "url": "https://polarnightenergy.com/news/sand-batterys-efficiency-explained/",
+      "year": 2025
+    },
+    {
+      "title": "World’s Largest Sand Battery achieves its targets",
+      "author": "Polar Night Energy",
+      "url": "https://polarnightenergy.com/news/worlds-largest-sand-battery-achieves-its-targets-emissions-reduced-by-70/",
+      "year": 2026
+    },
+    {
+      "title": "Numerical Modelling of a Packed Bed TES for Applications in a Carnot Battery",
+      "author": "Juul, KTH",
+      "url": "https://kth.diva-portal.org/smash/get/diva2:1793974/FULLTEXT01.pdf",
+      "year": 2023
+    },
+    {
+      "title": "Genius Engineering of Sand Batteries - HANDS ON!",
+      "author": "Two Bit da Vinci",
+      "url": "https://www.youtube.com/watch?v=7AW60Bd1V64",
+      "year": 2025
+    }
+  ]
 }

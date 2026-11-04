@@ -8,7 +8,7 @@ French and English.
 
 🇫🇷 [Version française plus bas](#français)
 
-> The labs are independent educational reconstructions of machines seen in public videos. They are not official drawings
+> The labs are independent educational reconstructions of machines, from public videos and documents. They are not official drawings
 > nor makers' products, and no image or footage of those videos is reused. Each lab credits its sources; this site lists
 > them too (About and credits).
 
@@ -150,7 +150,7 @@ porte d’entrée, en français et en anglais.
 
 **▶ https://labs.onigam.io** · français sur `/`, anglais sur `/en/` · clair et sombre · ordinateur, tablette et téléphone
 
-> Les labs sont des reconstitutions pédagogiques indépendantes de machines vues dans des vidéos publiques. Ce ne sont ni des plans
+> Les labs sont des reconstitutions pédagogiques indépendantes de machines, à partir de vidéos et de documents publics. Ce ne sont ni des plans
 > officiels ni des produits de constructeur, et aucune image ni séquence de ces vidéos n’est reprise. Chaque lab crédite ses
 > sources ; ce site les liste aussi (« À propos et crédits »).
 

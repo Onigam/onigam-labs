@@ -105,6 +105,12 @@ export const fr = {
     biogas: 'Biogaz',
     passive: 'Passif',
     'off-grid': 'Hors réseau',
+    gravity: 'Gravité',
+    lifting: 'Levage',
+    grid: 'Réseau',
+    waste: 'Déchets',
+    cooking: 'Cuisson',
+    biology: 'Biologie',
   } as Record<string, string>,
   inside: {
     title: 'Dans chaque lab',
@@ -131,7 +137,7 @@ export const fr = {
   about: {
     title: 'À propos et crédits',
     paragraphs: [
-      'Onigam Labs est un projet personnel de Magino. Chaque lab reconstitue, pour apprendre, une machine vue dans une vidéo publique : c’est une reconstitution pédagogique indépendante, ni un plan officiel ni un produit de constructeur.',
+      'Onigam Labs est un projet personnel de Magino. Chaque lab reconstitue, pour apprendre, une machine à partir de vidéos et de documents publics : c’est une reconstitution pédagogique indépendante, ni un plan officiel ni un produit de constructeur.',
       'Aucune image ni séquence de ces vidéos n’est reprise. Les sources sont créditées dans chaque lab, onglet Sources, et plus bas. Les chiffres viennent de la simulation, sauf quand la source est citée.',
       'Les guides parlés sont lus par une voix de synthèse, toujours signalée comme telle.',
       'Ces labs servent à comprendre, pas à construire sans précaution : l’électricité, l’eau, le feu et le gaz demandent des règles, parfois une autorisation. Ce n’est pas un bureau d’études.',

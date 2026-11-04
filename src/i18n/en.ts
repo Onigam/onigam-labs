@@ -107,6 +107,12 @@ export const en: Dict = {
     biogas: 'Biogas',
     passive: 'Passive',
     'off-grid': 'Off-grid',
+    gravity: 'Gravity',
+    lifting: 'Lifting',
+    grid: 'Grid',
+    waste: 'Waste',
+    cooking: 'Cooking',
+    biology: 'Biology',
   },
   inside: {
     title: 'Inside every lab',
@@ -136,7 +142,7 @@ export const en: Dict = {
   about: {
     title: 'About and credits',
     paragraphs: [
-      'Onigam Labs is a personal project by Magino. Each lab rebuilds, for learning, a machine seen in a public video: it is an independent educational reconstruction, neither an official drawing nor a maker’s product.',
+      'Onigam Labs is a personal project by Magino. Each lab rebuilds, for learning, a machine from public videos and documents: it is an independent educational reconstruction, neither an official drawing nor a maker’s product.',
       'No image or footage from those videos is reused. Sources are credited inside each lab, in the Sources tab, and below. Figures come from the simulation, except where a source is quoted.',
       'The spoken guides are read by a synthetic voice, always labelled as such.',
       'These labs are for understanding, not for building without care: electricity, water, fire and gas come with rules, sometimes a permit. This is not an engineering study.',
