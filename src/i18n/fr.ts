@@ -154,7 +154,7 @@ export const fr = {
   },
   footer: {
     licence: 'Licence MIT',
-    privacy: 'Pas de cookies, pas de statistiques.',
+    privacy: 'Pas de cookies, pas de publicité, des statistiques anonymes.',
     privacyLink: 'Confidentialité',
   },
   privacyPage: {
@@ -167,7 +167,7 @@ export const fr = {
       {
         title: 'L’essentiel',
         paragraphs: [
-          'Ni ce site ni les labs ne demandent de compte ou d’adresse e-mail. Ils ne posent aucun cookie et n’utilisent aucun outil de statistiques ni de publicité.',
+          'Ni ce site ni les labs ne demandent de compte ou d’adresse e-mail. Ils ne posent aucun cookie et n’utilisent aucun outil de publicité. Ce site compte ses visites avec Vercel Web Analytics : des chiffres agrégés, sans cookie, sans suivi d’une visite à l’autre ni d’un site à l’autre. Les labs n’ont aucun outil de statistiques.',
         ],
       },
       {

@@ -159,7 +159,7 @@ export const en: Dict = {
   },
   footer: {
     licence: 'MIT licence',
-    privacy: 'No cookies, no analytics.',
+    privacy: 'No cookies, no ads, anonymous statistics.',
     privacyLink: 'Privacy',
   },
   privacyPage: {
@@ -172,7 +172,7 @@ export const en: Dict = {
       {
         title: 'The short version',
         paragraphs: [
-          'Neither this site nor the labs ask for an account or an email address. They set no cookies and use no analytics or advertising tool.',
+          'Neither this site nor the labs ask for an account or an email address. They set no cookies and use no advertising tool. This site counts its visits with Vercel Web Analytics: aggregated figures, with no cookie and no tracking from one visit to the next or across sites. The labs have no analytics tool.',
         ],
       },
       {
