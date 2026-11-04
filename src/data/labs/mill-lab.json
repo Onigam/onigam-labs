@@ -12,11 +12,11 @@
   "difficulty": 2,
   "minutes": 20,
   "languages": ["fr", "en"],
-  "spokenGuide": [],
+  "spokenGuide": ["fr", "en"],
   "liveUrl": "https://mill-lab.onigam.io",
   "thumbnail": "mill-lab",
   "repoUrl": "https://github.com/Onigam/mill-lab",
-  "capture": { "scene": "screw", "cutaway": true, "zoom": 2, "focus": [0.4, 0.55] },
+  "capture": { "scene": "screw", "cutaway": true, "zoom": 1.7, "focus": [0.46, 0.5] },
   "sources": [
     {
       "title": "Autonomie : L’HYDROÉLECTRICITÉ du futur se trouve dans les vieux MOULINS d’hier",

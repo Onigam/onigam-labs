@@ -13,7 +13,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // Interface drawn over or around the 3D view: hidden so the device is the whole picture.
 const HIDE =
-  '.label-layer, .toolbar, .hint, .narr, .narr__bar, .narr__invite, .strip, .toast { display: none !important; }';
+  '.label-layer, .toolbar, .hint, .narr, .narr__bar, .narr__invite, .strip, .toast, .panel-toggle, .panel__edge { display: none !important; }';
 
 /**
  * `zoom` (>= 1) tightens the crop around `focus` ([x, y] as fractions of the canvas, centre by default).
