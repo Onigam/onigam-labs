@@ -15,6 +15,7 @@
   "spokenGuide": ["fr", "en"],
   "liveUrl": "https://pelton-lab.onigam.io",
   "thumbnail": "pelton-lab",
+  "film": { "id": "RCVzB_erfiw", "seconds": 285 },
   "repoUrl": "https://github.com/Onigam/pelton-lab",
   "capture": { "scene": "turbine", "explode": 0.65, "zoom": 1.1, "focus": [0.5, 0.55] },
   "sources": [

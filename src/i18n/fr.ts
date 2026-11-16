@@ -74,6 +74,7 @@ export const fr = {
     follow: 'Suivre sur GitHub',
     soon: 'À venir',
     inProgress: 'En construction',
+    film: 'Voir le film',
     forLab: (title: string) => ` ${title}`,
   },
   tour: {
@@ -151,6 +152,10 @@ export const fr = {
       'Le code de chaque lab est public, sous licence MIT. Tous partagent le même socle, lab-kit : même cadre, mêmes outils, mêmes repères.',
     kit: 'lab-kit sur GitHub',
     profile: 'Magino sur GitHub',
+    channelTitle: 'Films et Shorts',
+    channelText:
+      'La chaîne tire de ces labs des films documentaires courts et des Shorts : un vrai problème, la machine en 3D, la réponse. En anglais, avec une piste audio en français.',
+    channel: 'Chaîne YouTube',
   },
   footer: {
     licence: 'Licence MIT',

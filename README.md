@@ -76,6 +76,7 @@ Other cases:
 | promote a lab to online                 | `npm run add-lab <slug>`: status becomes `live`, thumbnails are taken, the entry is checked        |
 | refresh every lab from its `lab.json`   | `npm run add-lab -- --all`                                                                         |
 | credit the sources                      | edit `sources` in the entry (or put a `sources` array in the lab's `lab.json`: it is copied)       |
+| link the channel's film about a lab     | add `"film": { "id": "<YouTube id>", "seconds": 285 }` once the film is public (a live lab only)   |
 
 An entry looks like this (`src/data/schema.ts` is the reference, and the build checks it):
 

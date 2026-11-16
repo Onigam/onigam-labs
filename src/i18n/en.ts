@@ -76,6 +76,7 @@ export const en: Dict = {
     follow: 'Follow on GitHub',
     soon: 'Coming',
     inProgress: 'In progress',
+    film: 'Watch the film',
     forLab: (title: string) => ` ${title}`,
   },
   tour: {
@@ -156,6 +157,10 @@ export const en: Dict = {
       'Every lab’s code is public under the MIT licence. They all share one foundation, lab-kit: same frame, same tools, same bearings.',
     kit: 'lab-kit on GitHub',
     profile: 'Magino on GitHub',
+    channelTitle: 'Films and Shorts',
+    channelText:
+      'The channel turns the labs into short documentary films and Shorts: a real problem, the machine in 3D, the answer. In English, with a French audio track.',
+    channel: 'YouTube channel',
   },
   footer: {
     licence: 'MIT licence',

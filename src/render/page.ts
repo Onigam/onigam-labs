@@ -10,6 +10,7 @@ export const SITE = {
   repo: 'https://github.com/Onigam/onigam-labs',
   profile: 'https://github.com/Onigam',
   kit: 'https://github.com/Onigam/lab-kit',
+  channel: 'https://www.youtube.com/@OnigamLabs',
 };
 
 const LANG_NAMES: Record<Lang, string> = { fr: 'FR', en: 'EN' };
@@ -106,6 +107,11 @@ function thumb(lab: LabEntry, lang: Lang): string {
   return `<img src="${base}-${small}.webp" srcset="${base}-${small}.webp ${small}w, ${base}-${large}.webp ${large}w" sizes="(min-width: 1100px) 390px, (min-width: 700px) 46vw, 92vw" width="${small}" height="${Math.round((small * 3) / 4)}" alt="" loading="lazy" decoding="async">`;
 }
 
+/** `285` becomes `4:45`. */
+function duration(seconds: number): string {
+  return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
+}
+
 function card(lab: LabEntry, lang: Lang, t: Dict): string {
   const title = lab.title[lang];
   const live = lab.status === 'live';
@@ -114,7 +120,12 @@ function card(lab: LabEntry, lang: Lang, t: Dict): string {
     : `<div class="lab__shot lab__shot--empty" aria-hidden="true"><span class="mono">${esc(t.card.inProgress)}</span></div>`;
   const actions = live
     ? `<a class="btn btn--primary" href="${esc(lab.liveUrl ?? '#')}">${esc(t.card.open)}<span class="vh">${esc(t.card.forLab(title))}</span></a>
-       <a class="btn" href="${esc(lab.repoUrl ?? '#')}">${ICONS.github}${esc(t.card.source)}<span class="vh">${esc(t.card.forLab(title))}</span></a>`
+       <a class="btn" href="${esc(lab.repoUrl ?? '#')}">${ICONS.github}${esc(t.card.source)}<span class="vh">${esc(t.card.forLab(title))}</span></a>${
+         lab.film
+           ? `
+       <a class="btn" href="https://www.youtube.com/watch?v=${esc(lab.film.id)}">${ICONS.play}${esc(t.card.film)}<span class="mono">${duration(lab.film.seconds)}</span><span class="vh">${esc(t.card.forLab(title))}</span></a>`
+           : ''
+       }`
     : `<a class="btn" href="${esc(lab.repoUrl ?? '#')}">${ICONS.github}${esc(t.card.follow)}<span class="vh">${esc(t.card.forLab(title))}</span></a>`;
   return `<article class="lab lab--${lab.status}" data-lab="${esc(lab.slug)}" data-domains="${lab.domains.join(' ')}">
   ${shot}
@@ -225,6 +236,9 @@ function aboutSection(lang: Lang, t: Dict): string {
       <h3>${esc(t.about.openTitle)}</h3>
       <p class="muted">${esc(t.about.openText)}</p>
       <p class="links"><a class="btn" href="${SITE.kit}">${ICONS.github}${esc(t.about.kit)}</a><a class="btn" href="${SITE.profile}">${ICONS.github}${esc(t.about.profile)}</a></p>
+      <h3>${esc(t.about.channelTitle)}</h3>
+      <p class="muted">${esc(t.about.channelText)}</p>
+      <p class="links"><a class="btn" href="${SITE.channel}">${ICONS.play}${esc(t.about.channel)}</a></p>
     </div>
   </div>
 </section>`;
@@ -237,6 +251,7 @@ function footer(lang: Lang, t: Dict, year: number): string {
     <div class="foot__links">
       <a href="${PRIVACY_PATHS[lang]}">${esc(t.footer.privacyLink)}</a>
       <a href="${SITE.repo}">${esc(t.hero.secondary)}</a>
+      <a href="${SITE.channel}">${esc(t.about.channel)}</a>
       <a href="#top">${esc(t.a11y.backToTop)}</a>
     </div>
   </div>

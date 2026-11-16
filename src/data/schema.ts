@@ -36,6 +36,8 @@ export interface LabEntry {
   spokenGuide: Lang[];
   liveUrl?: string;
   repoUrl?: string;
+  /** The channel's public film about this lab: the YouTube video id and its length in seconds. Set only once the film is public. */
+  film?: { id: string; seconds: number };
   /** Base name of the files in public/labs/: <thumbnail>-<lang>-720.webp and <thumbnail>-<lang>-1280.webp. */
   thumbnail?: string;
   /** How `add-lab` frames the thumbnail: which world, how exploded (0 to 1), in section or not. Not shown on the site. */
@@ -104,6 +106,14 @@ export function validateLab(entry: unknown, fileSlug: string): string[] {
     if (!isText(e.thumbnail)) errors.push('thumbnail: run `npm run add-lab` to capture one');
     if (!Array.isArray(e.sources) || e.sources.length === 0)
       errors.push('sources: a live lab credits at least its main source');
+  }
+  if (e.film !== undefined) {
+    const f = e.film;
+    if (!isObj(f) || typeof f.id !== 'string' || !/^[A-Za-z0-9_-]{11}$/.test(f.id))
+      errors.push('film.id: an 11-character YouTube video id expected');
+    if (!isObj(f) || !Number.isInteger(f.seconds) || (f.seconds as number) <= 0)
+      errors.push('film.seconds: positive integer expected');
+    if (e.status !== 'live') errors.push('film: only a live lab shows its film');
   }
   if (e.status === 'planned' && (e.liveUrl || e.thumbnail))
     errors.push('a planned lab has no liveUrl or thumbnail yet');

@@ -15,6 +15,7 @@
   "spokenGuide": ["fr", "en"],
   "liveUrl": "https://biodigester-lab.onigam.io",
   "thumbnail": "biodigester-lab",
+  "film": { "id": "CJ8ckr-30ag", "seconds": 350 },
   "repoUrl": "https://github.com/Onigam/biodigester-lab",
   "capture": { "scene": "digester" },
   "sources": [

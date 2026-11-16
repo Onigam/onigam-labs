@@ -34,6 +34,15 @@ describe('lab entries', () => {
     expect(ranks).toEqual([...ranks].sort());
   });
 
+  it('rejects a film that is not a YouTube id, or on a lab that is not online', () => {
+    const live = JSON.parse(fs.readFileSync(path.join(dir, 'pelton-lab.json'), 'utf8'));
+    expect(validateLab({ ...live, film: { id: 'short', seconds: 100 } }, 'pelton-lab')).toHaveLength(1);
+    expect(validateLab({ ...live, film: { id: 'RCVzB_erfiw', seconds: 0 } }, 'pelton-lab')).toHaveLength(1);
+    expect(
+      validateLab({ ...live, status: 'building', film: { id: 'RCVzB_erfiw', seconds: 285 } }, 'pelton-lab'),
+    ).toContain('film: only a live lab shows its film');
+  });
+
   it('rejects an incomplete live lab', () => {
     const bad = { slug: 'x-lab', order: 1, status: 'live', title: { fr: 'X', en: '' } } as unknown as LabEntry;
     expect(validateLab(bad, 'x-lab').length).toBeGreaterThan(3);
@@ -76,6 +85,15 @@ describe('the page', () => {
       expect(fr).toContain(`href="${lab.liveUrl}"`);
       expect(fr).toContain(`href="${lab.repoUrl}"`);
     }
+  });
+  it('links a lab to its public film, and every page to the channel', () => {
+    const withFilm = LABS.filter((l) => l.film);
+    expect(withFilm.length).toBeGreaterThan(0);
+    for (const html of [fr, en]) {
+      for (const lab of withFilm) expect(html).toContain(`href="https://www.youtube.com/watch?v=${lab.film?.id}"`);
+      expect(html).toContain('href="https://www.youtube.com/@OnigamLabs"');
+    }
+    for (const lab of LABS.filter((l) => l.status !== 'live')) expect(lab.film).toBeUndefined();
   });
   it('labels spoken guides as synthetic voice', () => {
     expect(fr).toContain('voix de synthèse');
