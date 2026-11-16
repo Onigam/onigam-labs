@@ -22,7 +22,7 @@ French and English.
   voice_) and links to the live lab and its source. Labs in progress and labs to come are shown without dates.
 - **Inside every lab**, **About and credits** (sources by lab, safety, open code).
 - French and English with the same content (a test compares them), a language switch, a theme toggle that follows the system
-  until you choose, keyboard and screen-reader friendly, no cookies and no analytics.
+  until you choose, keyboard and screen-reader friendly, no cookies, and only anonymous visit counts (Vercel Web Analytics, said on the privacy page).
 
 ## Stack
 
@@ -165,7 +165,7 @@ porte d’entrée, en français et en anglais.
   synthèse_) et les liens vers le lab en ligne et son code. Les labs en construction et à venir sont montrés sans date.
 - **Dans chaque lab**, **À propos et crédits** (sources par lab, sécurité, code ouvert).
 - Français et anglais à contenu égal (un test les compare), bouton de langue, thème qui suit le système tant qu’on n’a pas choisi,
-  utilisable au clavier et au lecteur d’écran, ni cookies ni statistiques.
+  utilisable au clavier et au lecteur d’écran, sans cookies et avec seulement un comptage anonyme des visites (Vercel Web Analytics, dit sur la page de confidentialité).
 
 ## Pile technique
 
