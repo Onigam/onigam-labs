@@ -4,8 +4,8 @@
   "status": "planned",
   "title": { "fr": "Maison bioclimatique", "en": "Bioclimatic house" },
   "tagline": {
-    "fr": "Mur Trombe, puits canadien, séchoir et cuiseur solaires dans une maison en coupe",
-    "en": "Trombe wall, earth tube, solar dryer and cooker in a house cutaway"
+    "fr": "Un mur de béton noir de 60 cm derrière deux vitres, dans une maison de 1967 à Odeillo coupée en deux : peut-il chauffer la nuit ?",
+    "en": "A black concrete wall 60 cm thick behind two sheets of glass, in a house of 1967 at Odeillo cut open: can it heat the night?"
   },
   "domains": ["heat"],
   "tags": ["solar", "passive"],
