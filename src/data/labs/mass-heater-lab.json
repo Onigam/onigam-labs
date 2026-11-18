@@ -15,6 +15,7 @@
   "spokenGuide": ["fr", "en"],
   "liveUrl": "https://mass-heater-lab.onigam.io",
   "thumbnail": "mass-heater-lab",
+  "film": { "id": "dHN1wte2lZM", "seconds": 341 },
   "repoUrl": "https://github.com/Onigam/mass-heater-lab",
   "capture": { "scene": "fire-core", "zoom": 1.2, "focus": [0.55, 0.43] },
   "sources": [
