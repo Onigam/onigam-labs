@@ -1,15 +1,44 @@
 {
   "slug": "bioclimatic-house-lab",
   "order": 3,
-  "status": "planned",
-  "title": { "fr": "Maison bioclimatique", "en": "Bioclimatic house" },
+  "status": "live",
+  "title": {
+    "fr": "Maison bioclimatique : le mur qui garde le soleil",
+    "en": "Bioclimatic house: the wall that keeps the sun"
+  },
   "tagline": {
     "fr": "Un mur de béton noir de 60 cm derrière deux vitres, dans une maison de 1967 à Odeillo coupée en deux : peut-il chauffer la nuit ?",
     "en": "A black concrete wall 60 cm thick behind two sheets of glass, in a house of 1967 at Odeillo cut open: can it heat the night?"
   },
-  "domains": ["heat"],
+  "domains": ["heat", "storage"],
   "tags": ["solar", "passive"],
+  "difficulty": 2,
+  "minutes": 30,
   "languages": ["fr", "en"],
-  "spokenGuide": [],
-  "sources": []
+  "spokenGuide": ["fr", "en"],
+  "liveUrl": "https://bioclimatic-house-lab.onigam.io",
+  "thumbnail": "bioclimatic-house-lab",
+  "repoUrl": "https://github.com/Onigam/bioclimatic-house-lab",
+  "capture": {
+    "scene": "wall"
+  },
+  "sources": [
+    {
+      "title": "Some performance characteristics of the CNRS solar house collectors (Passive Solar Heating and Cooling, LA-6637-C, pp. 201–222)",
+      "author": "F. Trombe, J.-F. Robert, M. Cabanat, B. Sesolis",
+      "url": "https://www.osti.gov/servlets/purl/7287449",
+      "year": 1976
+    },
+    {
+      "title": "Naturally air-conditioned dwellings (US patent 3,832,992)",
+      "author": "F. Trombe, J. Michel",
+      "url": "https://patents.google.com/patent/US3832992A/en",
+      "year": 1974
+    },
+    {
+      "title": "PVGIS 5.3, monthly irradiation and air temperature (SARAH3, 2005–2023)",
+      "author": "European Commission, Joint Research Centre",
+      "url": "https://re.jrc.ec.europa.eu/pvg_tools/en/"
+    }
+  ]
 }

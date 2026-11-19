@@ -1,15 +1,51 @@
 {
   "slug": "gasifier-lab",
   "order": 7,
-  "status": "planned",
-  "title": { "fr": "Gazogène", "en": "Wood gasifier" },
+  "status": "live",
+  "title": {
+    "fr": "Le gazogène F-5 : un tracteur suédois au gaz de bois",
+    "en": "The F-5 gasifier: a Swedish tractor on wood gas"
+  },
   "tagline": {
-    "fr": "Le voyage d’un morceau de bois, de la bûche au gaz",
-    "en": "A piece of wood’s journey, from log to gas"
+    "fr": "Un tracteur suédois au gaz de bois : un feu qui manque d’air exprès, et un gaz qui tue quand le moteur s’arrête",
+    "en": "A Swedish tractor on wood gas: a fire short of air on purpose, and a gas that kills when the engine stops"
   },
   "domains": ["heat", "electricity"],
-  "tags": ["wood", "off-grid"],
+  "tags": ["wood", "gas", "fire", "engine"],
+  "difficulty": 3,
+  "minutes": 40,
   "languages": ["fr", "en"],
-  "spokenGuide": [],
-  "sources": []
+  "spokenGuide": ["fr", "en"],
+  "liveUrl": "https://gasifier-lab.onigam.io",
+  "thumbnail": "gasifier-lab",
+  "repoUrl": "https://github.com/Onigam/gasifier-lab",
+  "capture": {
+    "scene": "gasifier"
+  },
+  "sources": [
+    {
+      "title": "Wood gas as engine fuel (FAO Forestry Paper 72)",
+      "author": "FAO, Forestry Department",
+      "url": "https://www.fao.org/4/T0512E/T0512e00.htm",
+      "year": 1986
+    },
+    {
+      "title": "Generator Gas: The Swedish Experience from 1939–1945 (SERI/SP-33-140, translation of Gengas)",
+      "author": "Swedish Academy of Engineering Sciences",
+      "url": "https://docs.nlr.gov/docs/legosti/old/140.pdf",
+      "year": 1979
+    },
+    {
+      "title": "Handbook of Biomass Downdraft Gasifier Engine Systems (SERI/SP-271-3022)",
+      "author": "T. B. Reed, A. Das",
+      "url": "https://digital.library.unt.edu/ark:/67531/metadc1061385/m2/1/high_res_d/5206099.pdf",
+      "year": 1988
+    },
+    {
+      "title": "Monoxyde de carbone, fiche toxicologique FT 47",
+      "author": "INRS",
+      "url": "https://inrs.fr/dam/ficheTox/FicheFicheTox/FICHETOX_47-1.pdf",
+      "year": 2021
+    }
+  ]
 }

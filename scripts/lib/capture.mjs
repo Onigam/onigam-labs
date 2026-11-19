@@ -42,6 +42,8 @@ export async function captureLab({ url, slug, outDir, langs = ['fr', 'en'], shot
           Object.defineProperty(navigator, 'languages', { get: () => [lang] });
           localStorage.setItem(`${id}:lang`, lang);
           localStorage.setItem(`${id}:narration-invited`, '1');
+          // a lab that opens on a safety notice (`<id>:entry-notice`, version 1: the gasifier) must not have it over its thumbnail
+          localStorage.setItem(`${id}:entry-notice`, '1');
         },
         slug,
         lang,
