@@ -15,6 +15,7 @@
   "spokenGuide": ["fr", "en"],
   "liveUrl": "https://piggott-lab.onigam.io",
   "thumbnail": "piggott-lab",
+  "film": { "id": "cBXq5x2p-9A", "seconds": 418 },
   "repoUrl": "https://github.com/Onigam/piggott-lab",
   "capture": { "scene": "turbine", "explode": 0.5, "zoom": 1.7, "focus": [0.49, 0.54] },
   "sources": [
